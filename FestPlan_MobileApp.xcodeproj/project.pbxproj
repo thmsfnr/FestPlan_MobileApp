@@ -14,6 +14,9 @@
 		BCE4091929B0F69A0051DB3B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4091829B0F69A0051DB3B /* SignInView.swift */; };
 		BCF68A1229C0711B00693801 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1129C0711B00693801 /* HomeView.swift */; };
 		BCF68A1429C071F000693801 /* ConsultActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1329C071F000693801 /* ConsultActivityView.swift */; };
+		BCF68A1929C0777800693801 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1829C0777800693801 /* ApiConfig.swift */; };
+		BCF68A1B29C0793B00693801 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1A29C0793B00693801 /* ActivityService.swift */; };
+		BCF68A1D29C082E300693801 /* AuthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1C29C082E300693801 /* AuthHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		BCE4091829B0F69A0051DB3B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BCF68A1129C0711B00693801 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BCF68A1329C071F000693801 /* ConsultActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultActivityView.swift; sourceTree = "<group>"; };
+		BCF68A1829C0777800693801 /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
+		BCF68A1A29C0793B00693801 /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
+		BCF68A1C29C082E300693801 /* AuthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,8 @@
 		BCF68A1529C0760700693801 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				BCF68A1A29C0793B00693801 /* ActivityService.swift */,
+				BCF68A1C29C082E300693801 /* AuthHeader.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -105,6 +113,7 @@
 		BCF68A1629C0761400693801 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				BCF68A1829C0777800693801 /* ApiConfig.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -186,10 +195,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF68A1B29C0793B00693801 /* ActivityService.swift in Sources */,
 				BCF68A1429C071F000693801 /* ConsultActivityView.swift in Sources */,
 				BC51112729ACF22C0074E67A /* FestPlan_MobileAppApp.swift in Sources */,
+				BCF68A1929C0777800693801 /* ApiConfig.swift in Sources */,
 				BCE4091929B0F69A0051DB3B /* SignInView.swift in Sources */,
 				BCF68A1229C0711B00693801 /* HomeView.swift in Sources */,
+				BCF68A1D29C082E300693801 /* AuthHeader.swift in Sources */,
 				BCE4091729B0F6750051DB3B /* SignInViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
