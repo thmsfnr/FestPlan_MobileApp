@@ -11,7 +11,7 @@ struct SignInView: View {
 
     // MARK: - Properties
 
-    @ObservedObject var viewModel: SignInViewModel
+    @ObservedObject var viewModel = SignInViewModel()
 
     // MARK: - View
 
