@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		BC51112729ACF22C0074E67A /* FestPlan_MobileAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */; };
-		BC51112929ACF22C0074E67A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51112829ACF22C0074E67A /* ContentView.swift */; };
 		BC51112B29ACF22E0074E67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC51112A29ACF22E0074E67A /* Assets.xcassets */; };
 		BC51112E29ACF22E0074E67A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC51112D29ACF22E0074E67A /* Preview Assets.xcassets */; };
 		BCE4091729B0F6750051DB3B /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4091629B0F6750051DB3B /* SignInViewModel.swift */; };
 		BCE4091929B0F69A0051DB3B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4091829B0F69A0051DB3B /* SignInView.swift */; };
-		BCE4091E29B100160051DB3B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4091D29B100160051DB3B /* UserModel.swift */; };
+		BCF68A1229C0711B00693801 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1129C0711B00693801 /* HomeView.swift */; };
+		BCF68A1429C071F000693801 /* ConsultActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1329C071F000693801 /* ConsultActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BC51112329ACF22C0074E67A /* FestPlan_MobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FestPlan_MobileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestPlan_MobileAppApp.swift; sourceTree = "<group>"; };
-		BC51112829ACF22C0074E67A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BC51112A29ACF22E0074E67A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC51112D29ACF22E0074E67A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCE4091629B0F6750051DB3B /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		BCE4091829B0F69A0051DB3B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		BCE4091D29B100160051DB3B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		BCF68A1129C0711B00693801 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BCF68A1329C071F000693801 /* ConsultActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +57,10 @@
 		BC51112529ACF22C0074E67A /* FestPlan_MobileApp */ = {
 			isa = PBXGroup;
 			children = (
+				BCF68A1729C0762B00693801 /* Intent */,
+				BCF68A1629C0761400693801 /* Config */,
+				BCF68A1529C0760700693801 /* Service */,
 				BCE4091C29B0F6CA0051DB3B /* ModelView */,
-				BCE4091B29B0F6BD0051DB3B /* Model */,
 				BCE4091A29B0F6AF0051DB3B /* View */,
 				BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */,
 				BC51112A29ACF22E0074E67A /* Assets.xcassets */,
@@ -78,18 +80,11 @@
 		BCE4091A29B0F6AF0051DB3B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BC51112829ACF22C0074E67A /* ContentView.swift */,
 				BCE4091829B0F69A0051DB3B /* SignInView.swift */,
+				BCF68A1129C0711B00693801 /* HomeView.swift */,
+				BCF68A1329C071F000693801 /* ConsultActivityView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		BCE4091B29B0F6BD0051DB3B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BCE4091D29B100160051DB3B /* UserModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		BCE4091C29B0F6CA0051DB3B /* ModelView */ = {
@@ -98,6 +93,27 @@
 				BCE4091629B0F6750051DB3B /* SignInViewModel.swift */,
 			);
 			path = ModelView;
+			sourceTree = "<group>";
+		};
+		BCF68A1529C0760700693801 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BCF68A1629C0761400693801 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		BCF68A1729C0762B00693801 /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Intent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,10 +186,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC51112929ACF22C0074E67A /* ContentView.swift in Sources */,
+				BCF68A1429C071F000693801 /* ConsultActivityView.swift in Sources */,
 				BC51112729ACF22C0074E67A /* FestPlan_MobileAppApp.swift in Sources */,
 				BCE4091929B0F69A0051DB3B /* SignInView.swift in Sources */,
-				BCE4091E29B100160051DB3B /* UserModel.swift in Sources */,
+				BCF68A1229C0711B00693801 /* HomeView.swift in Sources */,
 				BCE4091729B0F6750051DB3B /* SignInViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
