@@ -14,7 +14,7 @@ struct Activity: Codable, Hashable {
 }
 
 struct ConsultActivityView: View {
-    @State var activities: [Activity] = []
+    @State var activities: [ActivityAPI] = []
     
     var body: some View {
         VStack {
@@ -25,17 +25,9 @@ struct ConsultActivityView: View {
         }
         .padding()
         .onAppear(perform: {
-            ActivityService().getActivity(idActivity: nil, nameActivity: nil, type: nil) { result in
-                switch result {
-                case .success(let data):
-                    // Decode the response data into an array of Activity objects
-                    if let activities = try? JSONDecoder().decode([Activity].self, from: data) {
-                        self.activities = activities
-                    }
-                case .failure(let error):
-                    // Handle the error here
-                    self.activities = [Activity(idActivity: 1, nameActivity: "hgdf", type: 5)]
-                    print("Error: \(error)")
+            ActivityService().getActivity() { result in
+                DispatchQueue.main.async {
+                    self.activities = result
                 }
             }
         })
