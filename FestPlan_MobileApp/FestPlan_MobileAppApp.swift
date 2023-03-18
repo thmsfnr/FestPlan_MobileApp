@@ -11,7 +11,7 @@ import SwiftUI
 struct FestPlan_MobileAppApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            ContentView()
         }
     }
 }
