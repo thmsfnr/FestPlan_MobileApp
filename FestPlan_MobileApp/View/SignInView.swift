@@ -12,6 +12,7 @@ struct SignInView: View {
     // MARK: - Properties
 
     @ObservedObject var viewModel = SignInViewModel()
+    var intent = SignInIntent(signIn: SignInViewModel())
     @State private var isSignUpActive = false
 
     // MARK: - View
@@ -33,20 +34,13 @@ struct SignInView: View {
                             SecureField("Password", text: $viewModel.password)
                         }
                         .textFieldStyle(.roundedBorder)
-                        .disabled(viewModel.isSigningIn)
-                        
-                        if viewModel.isSigningIn {
-                            ProgressView()
-                                .progressViewStyle(.circular)
-                        } else {
+
                             NavigationLink(destination: HomeBoardView().navigationBarBackButtonHidden(true)) {
                                 Text("Sign In")
                             }
                             .onTapGesture {
-                                //viewModel.signIn()
-                                UserDefaults.standard.set("test", forKey: "user")
+                                intent.login(email: viewModel.email, password: viewModel.password)
                             }
-                        }
                         
                         Spacer()
                     }
@@ -54,12 +48,6 @@ struct SignInView: View {
                     .frame(maxWidth: 400.0)
                     
                     Spacer()
-                }
-                .alert(isPresented: $viewModel.hasError) {
-                    Alert(
-                        title: Text("Sign In Failed"),
-                        message: Text("The email/password combination is invalid.")
-                    )
                 }
                     
                 NavigationLink(destination: SignUpView()) {
@@ -76,6 +64,6 @@ struct SignInView: View {
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(viewModel: SignInViewModel())
+        SignInView()
     }
 }
