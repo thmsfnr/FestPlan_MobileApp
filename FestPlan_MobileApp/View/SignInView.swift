@@ -11,55 +11,67 @@ struct SignInView: View {
 
     // MARK: - Properties
 
-    @ObservedObject var viewModel = SignInViewModel()
+    @ObservedObject var viewModel: SignInViewModel
+    var intent: SignInIntent
+    
+    init(model: SignInViewModel) {
+        self.viewModel = model
+        self.intent = SignInIntent(signIn: model)
+    }
 
     // MARK: - View
 
     var body: some View {
-        HStack {
-            Spacer()
-
+        NavigationStack {
             VStack {
-                VStack(alignment: .leading) {
-                    Text("Email")
-                    TextField("Email", text: $viewModel.email)
-                        .autocapitalization(.none)
-                        .keyboardType(.emailAddress)
-                        .disableAutocorrection(true)
-                    Text("Password")
-                    SecureField("Password", text: $viewModel.password)
-                }
-                .textFieldStyle(.roundedBorder)
-                .disabled(viewModel.isSigningIn)
+                HStack {
+                    Spacer()
+                    
+                    VStack {
+                        VStack(alignment: .leading) {
+                            Text("Email")
+                            TextField("Email", text: $viewModel.email)
+                                .autocapitalization(.none)
+                                .keyboardType(.emailAddress)
+                                .disableAutocorrection(true)
+                            Text("Password")
+                            SecureField("Password", text: $viewModel.password)
+                        }
+                        .textFieldStyle(.roundedBorder)
 
-                if viewModel.isSigningIn {
-                    ProgressView()
-                        .progressViewStyle(.circular)
-                } else {
-                    Button("Sign In") {
-                        viewModel.signIn()
+                            Button("Sign In") {
+                                intent.login(email: viewModel.email, password: viewModel.password)
+                            }
+                        
+                        Spacer()
                     }
+                    .padding()
+                    .frame(maxWidth: 400.0)
+                    
+                    Spacer()
                 }
-
-                Spacer()
+                .background(
+                                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true),
+                                               isActive: $viewModel.isSignIn) {
+                                    EmptyView()
+                                }
+                                .hidden()
+                            )
+                    
+                NavigationLink(destination: SignUpView()) {
+                    Text("No account")
+                }
             }
-            .padding()
-            .frame(maxWidth: 400.0)
+            .navigationBarTitle("Login")
 
-            Spacer()
         }
-        .alert(isPresented: $viewModel.hasError) {
-            Alert(
-                title: Text("Sign In Failed"),
-                message: Text("The email/password combination is invalid.")
-            )
-        }
+        
     }
 
 }
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(viewModel: SignInViewModel())
+        SignInView(model: SignInViewModel())
     }
 }

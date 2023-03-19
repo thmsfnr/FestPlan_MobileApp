@@ -8,68 +8,57 @@
 import Combine
 import Foundation
 
-final class SignInViewModel: ObservableObject {
+enum TrackState {
+    case ready
+    case login(String,String)
+    case error
+}
 
-    // MARK: - Properties
-
+class SignInViewModel : ObservableObject {
+    
     @Published var email = ""
     @Published var password = ""
-
-    // MARK: -
-
-    @Published var hasError = false
-
-    @Published var isSigningIn = false
-
-    // MARK: -
-
+    @Published var name = ""
+    @Published var surname = ""
+    @Published var isSignIn = false
+    @Published var haserror = false
+    
+    // -----------------------------------------------------------
+    // State Intent management
+    @Published var state : TrackState = .ready {
+        didSet {
+            switch state {
+            case .login(let newEmail, let newPassword):
+                // si le nom convient :
+                self.email = newEmail
+                self.password = newPassword
+                self.isSignIn = true
+                self.state = .ready
+                // sinon on fait passer le state en .error
+            case .error:
+                debugPrint("error")
+                self.state = .ready
+            case .ready:
+                debugPrint("TrackViewModel: ready state")
+                debugPrint("--------------------------------------")
+            default:
+                break
+            }
+        }
+    }
+    
     var canSignIn: Bool {
         !email.isEmpty && !password.isEmpty
     }
-
-    // MARK: - Public API
-
-    func signIn() {
-        guard !email.isEmpty && !password.isEmpty else {
-            return
-        }
-
-        var request = URLRequest(url: URL(string: "http://localhost:8080/api/v1/signin")!)
-
-        request.httpMethod = "POST"
-
-        let authData = (email + ":" + password).data(using: .utf8)!.base64EncodedString()
-        request.addValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
-
-        isSigningIn = true
-
-        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-            DispatchQueue.main.async {
-                if error != nil || (response as! HTTPURLResponse).statusCode != 200 {
-                    self?.hasError = true
-                } else if let data = data {
-                    do {
-                        let signInResponse = try JSONDecoder().decode(SignInResponse.self, from: data)
-
-                        print(signInResponse)
-
-                        // TODO: Cache Access Token in Keychain
-                    } catch {
-                        print("Unable to Decode Response \(error)")
-                    }
-                }
-
-                self?.isSigningIn = false
-            }
-        }.resume()
+    
+    init() {
+        self.state = .ready
     }
-
-}
-
-fileprivate struct SignInResponse: Decodable {
-
-    // MARK: - Properties
-
-    let accessToken: String
-
+    
+    func login(email: String, password: String) {
+        self.email = email
+        self.password = password
+        self.isSignIn = true
+    }
+    
 }

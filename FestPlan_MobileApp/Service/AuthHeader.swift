@@ -11,7 +11,7 @@ class AuthHeader {
     
     func authHeader() -> [String: String] {
         let userDefaults = UserDefaults.standard
-        let token = UserDefaults.standard.string(forKey: "token")
+        let token = UserDefaults.standard.string(forKey: "accessToken")
         if let accessToken = token {
             return ["x-access-token": accessToken]
         }
