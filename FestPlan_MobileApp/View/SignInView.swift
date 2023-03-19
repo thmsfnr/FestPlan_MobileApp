@@ -11,9 +11,13 @@ struct SignInView: View {
 
     // MARK: - Properties
 
-    @ObservedObject var viewModel = SignInViewModel()
-    var intent = SignInIntent(signIn: SignInViewModel())
-    @State private var isSignUpActive = false
+    @ObservedObject var viewModel: SignInViewModel
+    var intent: SignInIntent
+    
+    init(model: SignInViewModel) {
+        self.viewModel = model
+        self.intent = SignInIntent(signIn: model)
+    }
 
     // MARK: - View
 
@@ -35,10 +39,7 @@ struct SignInView: View {
                         }
                         .textFieldStyle(.roundedBorder)
 
-                            NavigationLink(destination: HomeBoardView().navigationBarBackButtonHidden(true)) {
-                                Text("Sign In")
-                            }
-                            .onTapGesture {
+                            Button("Sign In") {
                                 intent.login(email: viewModel.email, password: viewModel.password)
                             }
                         
@@ -49,6 +50,13 @@ struct SignInView: View {
                     
                     Spacer()
                 }
+                .background(
+                                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true),
+                                               isActive: $viewModel.isSignIn) {
+                                    EmptyView()
+                                }
+                                .hidden()
+                            )
                     
                 NavigationLink(destination: SignUpView()) {
                     Text("No account")
@@ -64,6 +72,6 @@ struct SignInView: View {
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(model: SignInViewModel())
     }
 }

@@ -32,6 +32,7 @@ class SignInViewModel : ObservableObject {
                 // si le nom convient :
                 self.email = newEmail
                 self.password = newPassword
+                self.isSignIn = true
                 self.state = .ready
                 // sinon on fait passer le state en .error
             case .error:
@@ -57,6 +58,7 @@ class SignInViewModel : ObservableObject {
     func login(email: String, password: String) {
         self.email = email
         self.password = password
+        self.isSignIn = true
     }
     
 }

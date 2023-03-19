@@ -5,6 +5,9 @@
 //  Created by Thomas Fournier on 14/03/2023.
 //
 
+
+// Pas vrai vue, juste à titre d'aide pour faire des get plus tard !!!!!!!!
+
 import SwiftUI
 
 struct Activity: Codable, Hashable {

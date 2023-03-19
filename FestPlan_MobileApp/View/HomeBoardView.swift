@@ -8,15 +8,23 @@
 import SwiftUI
 
 struct HomeBoardView: View {
+    @State var shouldLogout = false
+    
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: SignInView().navigationBarBackButtonHidden(true)) {
-                    Text("Logout")
+                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true), isActive: $shouldLogout) {
+                    EmptyView()
                 }
-                .onTapGesture {
-                    UserDefaults.standard.set(nil, forKey: "user")
-                }
+                .hidden()
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        UserDefaults.standard.set(nil, forKey: "user")
+                        shouldLogout = true
+                    }) {
+                        Text("Logout")
+                    }
+                )
                 NavigationLink(destination: DisplayRegistrationView()) {
                     Text("Mes inscriptions")
                 }

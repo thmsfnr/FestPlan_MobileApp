@@ -31,17 +31,23 @@ class AuthService {
         // Make the request
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
+                print(error)
+                print("hgh")
                 completion(false, error)
                 return
             }
             guard let data = data else {
+                print("hgfhg")
                 completion(false, nil)
                 return
             }
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                if let token = json?["token"] as? String {
+                print("hjd")
+                print(json.debugDescription)
+                if let token = json?["accessToken"] as? String {
                     // Save the token to user defaults or keychain
+                    print(token)
                     UserDefaults.standard.set(token, forKey: "user")
                     completion(true, nil)
                 } else {
