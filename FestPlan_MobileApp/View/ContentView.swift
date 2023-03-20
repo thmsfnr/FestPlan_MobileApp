@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         Group {
-            if UserDefaults.standard.string(forKey: "user") == nil {
+            if UserDefaults.standard.data(forKey: "user") == nil {
                 SignInView(model: SignInViewModel())
             } else {
                 HomeBoardView()
