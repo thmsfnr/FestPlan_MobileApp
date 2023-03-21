@@ -1,24 +1,24 @@
 //
-//  SignInIntent.swift
+//  SignUpIntent.swift
 //  FestPlan_MobileApp
 //
-//  Created by Thomas Fournier on 18/03/2023.
+//  Created by Thomas Fournier on 20/03/2023.
 //
 
 import SwiftUI
 
-struct SignInIntent {
+struct SignUpIntent {
     
-    @ObservedObject private var model : SignInViewModel
-    init(signIn: SignInViewModel){
-        self.model = signIn
+    @ObservedObject private var model : SignUpViewModel
+    init(signUp: SignUpViewModel){
+        self.model = signUp
     }
     
-    func login(email: String, password: String){
+    func signup(email: String, password: String, name: String, surname: String){
         if (email.count < 4 && password.count < 4) {
            self.model.state = .error
         } else {
-            AuthService().login(email: email, password: password) { success, error in
+            AuthService().signup(email: email, password: password, name: name, surname: surname) { success, error in
                 if !success {
                     DispatchQueue.main.async {
                         self.model.state = .error
@@ -26,7 +26,7 @@ struct SignInIntent {
                     return
                 }
                 DispatchQueue.main.async {
-                    self.model.state = .login(email,password)
+                    self.model.state = .signup(email,password,name,surname)
                 }
             }
         }

@@ -3,15 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		BC51112729ACF22C0074E67A /* FestPlan_MobileAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */; };
 		BC51112B29ACF22E0074E67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC51112A29ACF22E0074E67A /* Assets.xcassets */; };
 		BC51112E29ACF22E0074E67A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC51112D29ACF22E0074E67A /* Preview Assets.xcassets */; };
+		BC68FB4029C895D300781A69 /* SignUpIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68FB3F29C895D300781A69 /* SignUpIntent.swift */; };
+		BC68FB4229C897FA00781A69 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68FB4129C897FA00781A69 /* SignUpViewModel.swift */; };
 		BC6DFB0729C64BEF00E28895 /* SignInIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6DFB0629C64BEF00E28895 /* SignInIntent.swift */; };
 		BC6DFB0929C64C5500E28895 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6DFB0829C64C5500E28895 /* AuthService.swift */; };
+		BC7D545129C9961200853497 /* FestivalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D545029C9961200853497 /* FestivalService.swift */; };
+		BC7D545329C9A7F800853497 /* SignupRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D545229C9A7F800853497 /* SignupRegistrationView.swift */; };
 		BCB9E3CD29C5D2AF00BE35D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9E3CC29C5D2AF00BE35D4 /* ContentView.swift */; };
 		BCB9E3CF29C5FC6C00BE35D4 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9E3CE29C5FC6C00BE35D4 /* SignUpView.swift */; };
 		BCB9E3D129C601BE00BE35D4 /* HomeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9E3D029C601BD00BE35D4 /* HomeBoardView.swift */; };
@@ -29,8 +33,12 @@
 		BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestPlan_MobileAppApp.swift; sourceTree = "<group>"; };
 		BC51112A29ACF22E0074E67A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC51112D29ACF22E0074E67A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BC68FB3F29C895D300781A69 /* SignUpIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntent.swift; sourceTree = "<group>"; };
+		BC68FB4129C897FA00781A69 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		BC6DFB0629C64BEF00E28895 /* SignInIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInIntent.swift; sourceTree = "<group>"; };
 		BC6DFB0829C64C5500E28895 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		BC7D545029C9961200853497 /* FestivalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalService.swift; sourceTree = "<group>"; };
+		BC7D545229C9A7F800853497 /* SignupRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRegistrationView.swift; sourceTree = "<group>"; };
 		BCB9E3CC29C5D2AF00BE35D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BCB9E3CE29C5FC6C00BE35D4 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		BCB9E3D029C601BD00BE35D4 /* HomeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBoardView.swift; sourceTree = "<group>"; };
@@ -102,6 +110,7 @@
 				BCB9E3CE29C5FC6C00BE35D4 /* SignUpView.swift */,
 				BCB9E3D029C601BD00BE35D4 /* HomeBoardView.swift */,
 				BCB9E3D229C6021500BE35D4 /* DisplayRegistrationView.swift */,
+				BC7D545229C9A7F800853497 /* SignupRegistrationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -110,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				BCE4091629B0F6750051DB3B /* SignInViewModel.swift */,
+				BC68FB4129C897FA00781A69 /* SignUpViewModel.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -120,6 +130,7 @@
 				BCF68A1A29C0793B00693801 /* ActivityService.swift */,
 				BCF68A1C29C082E300693801 /* AuthHeader.swift */,
 				BC6DFB0829C64C5500E28895 /* AuthService.swift */,
+				BC7D545029C9961200853497 /* FestivalService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -136,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				BC6DFB0629C64BEF00E28895 /* SignInIntent.swift */,
+				BC68FB3F29C895D300781A69 /* SignUpIntent.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -176,7 +188,7 @@
 				};
 			};
 			buildConfigurationList = BC51111E29ACF22C0074E67A /* Build configuration list for PBXProject "FestPlan_MobileApp" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -217,12 +229,16 @@
 				BCE4091929B0F69A0051DB3B /* SignInView.swift in Sources */,
 				BCB9E3CD29C5D2AF00BE35D4 /* ContentView.swift in Sources */,
 				BCB9E3CF29C5FC6C00BE35D4 /* SignUpView.swift in Sources */,
+				BC68FB4229C897FA00781A69 /* SignUpViewModel.swift in Sources */,
+				BC7D545329C9A7F800853497 /* SignupRegistrationView.swift in Sources */,
 				BCB9E3D129C601BE00BE35D4 /* HomeBoardView.swift in Sources */,
 				BCB9E3D329C6021500BE35D4 /* DisplayRegistrationView.swift in Sources */,
 				BCF68A1D29C082E300693801 /* AuthHeader.swift in Sources */,
 				BC6DFB0729C64BEF00E28895 /* SignInIntent.swift in Sources */,
 				BCE4091729B0F6750051DB3B /* SignInViewModel.swift in Sources */,
 				BC6DFB0929C64C5500E28895 /* AuthService.swift in Sources */,
+				BC68FB4029C895D300781A69 /* SignUpIntent.swift in Sources */,
+				BC7D545129C9961200853497 /* FestivalService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +374,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,6 +403,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

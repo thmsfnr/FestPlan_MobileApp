@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+struct User: Codable {
+    var id: Int
+    var name: String
+    var surname: String
+    var email: String
+    var accessToken: String
+}
+
 class AuthService {
 
     let apiUrl = ApiConfig().url + "/auth/"
@@ -31,28 +39,29 @@ class AuthService {
         // Make the request
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                print(error)
-                print("hgh")
                 completion(false, error)
                 return
             }
             guard let data = data else {
-                print("hgfhg")
                 completion(false, nil)
                 return
             }
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                print("hjd")
-                print(json.debugDescription)
                 if let token = json?["accessToken"] as? String {
-                    // Save the token to user defaults or keychain
-                    print(token)
-                    UserDefaults.standard.set(token, forKey: "user")
-                    completion(true, nil)
+                    let user = User(id: json?["id"] as? Int ?? 0, name: json?["name"] as? String ?? "", surname: json?["surname"] as? String ?? "", email: json?["email"] as? String ?? "", accessToken: token)
+                    let encoder = JSONEncoder()
+                    if let data = try? encoder.encode(user) {
+                        UserDefaults.standard.set(data, forKey: "user")
+                        UserDefaults.standard.synchronize()
+                        completion(true, nil)
+                    } else {
+                        completion(false, nil)
+                    }
                 } else {
                     completion(false, nil)
                 }
+
             } catch {
                 completion(false, error)
             }
@@ -82,19 +91,14 @@ class AuthService {
                 completion(false, error)
                 return
             }
-            guard let data = data else {
+            guard let httpResponse = response as? HTTPURLResponse else {
                 completion(false, nil)
                 return
             }
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                if let _ = json?["token"] as? String {
-                    completion(true, nil)
-                } else {
-                    completion(false, nil)
-                }
-            } catch {
-                completion(false, error)
+            if httpResponse.statusCode == 200 {
+                completion(true, nil)
+            } else {
+                completion(false, nil)
             }
         }.resume()
     }

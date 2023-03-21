@@ -28,8 +28,11 @@ struct HomeBoardView: View {
                 NavigationLink(destination: DisplayRegistrationView()) {
                     Text("Mes inscriptions")
                 }
+                NavigationLink(destination: SignupRegistrationView()) {
+                    Text("M'inscrire")
+                }
             }
-            .navigationBarTitle("Home")
+            .navigationBarTitle("Accueil")
         }
     }
 }
