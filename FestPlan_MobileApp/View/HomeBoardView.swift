@@ -8,6 +8,15 @@
 import SwiftUI
 
 struct HomeBoardView: View {
+    
+    @ObservedObject var viewModel: FestivalViewModel
+    var intent: FestivalIntent
+    
+    init(model: FestivalViewModel) {
+        self.viewModel = model
+        self.intent = FestivalIntent(festival: model)
+    }
+    
     @State var shouldLogout = false
     @State var festival = 0
     
@@ -32,24 +41,15 @@ struct HomeBoardView: View {
                 NavigationLink(destination: SignupRegistrationView()) {
                     Text("M'inscrire")
                 }
-                Text("Festival n°\(festival)")
+                if viewModel.isOpen == true {
+                    Text("Festival n°\(viewModel.idFestival) - \(viewModel.nameFestival)")
+                } else {
+                    Text("Loading festival...")
+                }
             }
             .navigationBarTitle("Accueil")
             .onAppear(perform: {
-                FestivalService().createFestival(nameFestival: "test") {
-                    success, error in
-                        if !success {
-                            print("yesssss")
-                        }
-                        else {
-                            print("shiitt")
-                        }
-                }
-                FestivalService().getFestival(isOpen: true) { result in
-                    DispatchQueue.main.async {
-                        self.festival = result[0].idFestival
-                    }
-                }
+                intent.loadOpen()
             })
         }
     }
@@ -57,6 +57,6 @@ struct HomeBoardView: View {
 
 struct HomeBoardView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeBoardView()
+        HomeBoardView(model: FestivalViewModel())
     }
 }

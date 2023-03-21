@@ -15,6 +15,8 @@
 		BC7D545329C9A7F800853497 /* SignupRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D545229C9A7F800853497 /* SignupRegistrationView.swift */; };
 		BC7D545529CA494600853497 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D545429CA494600853497 /* UserViewModel.swift */; };
 		BC7D545729CA49F700853497 /* UserIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D545629CA49F700853497 /* UserIntent.swift */; };
+		BC7D545929CA4BBB00853497 /* FestivalModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D545829CA4BBB00853497 /* FestivalModelView.swift */; };
+		BC7D545B29CA5AE600853497 /* FestivalIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D545A29CA5AE600853497 /* FestivalIntent.swift */; };
 		BCB9E3CD29C5D2AF00BE35D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9E3CC29C5D2AF00BE35D4 /* ContentView.swift */; };
 		BCB9E3CF29C5FC6C00BE35D4 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9E3CE29C5FC6C00BE35D4 /* SignUpView.swift */; };
 		BCB9E3D129C601BE00BE35D4 /* HomeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9E3D029C601BD00BE35D4 /* HomeBoardView.swift */; };
@@ -34,6 +36,8 @@
 		BC7D545229C9A7F800853497 /* SignupRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRegistrationView.swift; sourceTree = "<group>"; };
 		BC7D545429CA494600853497 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		BC7D545629CA49F700853497 /* UserIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIntent.swift; sourceTree = "<group>"; };
+		BC7D545829CA4BBB00853497 /* FestivalModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalModelView.swift; sourceTree = "<group>"; };
+		BC7D545A29CA5AE600853497 /* FestivalIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalIntent.swift; sourceTree = "<group>"; };
 		BCB9E3CC29C5D2AF00BE35D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BCB9E3CE29C5FC6C00BE35D4 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		BCB9E3D029C601BD00BE35D4 /* HomeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBoardView.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				BC7D545429CA494600853497 /* UserViewModel.swift */,
+				BC7D545829CA4BBB00853497 /* FestivalModelView.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				BC7D545629CA49F700853497 /* UserIntent.swift */,
+				BC7D545A29CA5AE600853497 /* FestivalIntent.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -210,6 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC7D545929CA4BBB00853497 /* FestivalModelView.swift in Sources */,
+				BC7D545B29CA5AE600853497 /* FestivalIntent.swift in Sources */,
 				BC51112729ACF22C0074E67A /* FestPlan_MobileAppApp.swift in Sources */,
 				BCF68A1929C0777800693801 /* ApiConfig.swift in Sources */,
 				BCE4091929B0F69A0051DB3B /* SignInView.swift in Sources */,

@@ -13,7 +13,7 @@ struct ContentView: View {
             if UserDefaults.standard.data(forKey: "user") == nil {
                 SignInView(model: UserViewModel())
             } else {
-                HomeBoardView()
+                HomeBoardView(model: FestivalViewModel())
             }
         }
     }

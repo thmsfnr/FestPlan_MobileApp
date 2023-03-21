@@ -17,10 +17,12 @@ enum UserState {
 
 class UserViewModel : ObservableObject {
     
+    @Published var idUser = 0
     @Published var email = ""
     @Published var password = ""
     @Published var name = ""
     @Published var surname = ""
+    @Published var role = 0
     @Published var isCreated = false
     @Published var isSignIn = false
     @Published var hasError = false
@@ -49,7 +51,25 @@ class UserViewModel : ObservableObject {
         }
     }
 
-    init() {
+    init(idUser: Int? = nil, email: String? = nil, password: String? = nil, name: String? = nil, surname: String? = nil, role: Int? = nil) {
+        if let idUser = idUser {
+            self.idUser = idUser
+        }
+        if let email = email {
+            self.email = email
+        }
+        if let password = password {
+            self.password = password
+        }
+        if let name = name {
+            self.name = name
+        }
+        if let surname = surname {
+            self.surname = surname
+        }
+        if let role = role {
+            self.role = role
+        }
         self.state = .ready
     }
     
