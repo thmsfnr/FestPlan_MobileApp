@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         Group {
             if UserDefaults.standard.data(forKey: "user") == nil {
-                SignInView(model: SignInViewModel())
+                SignInView(model: UserViewModel())
             } else {
                 HomeBoardView()
             }
