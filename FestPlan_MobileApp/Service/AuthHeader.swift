@@ -9,12 +9,11 @@ import Foundation
 
 class AuthHeader {
     
-    func authHeader() -> String {
+    static func authHeader() -> String {
         if let userData = UserDefaults.standard.data(forKey: "user") {
             do {
                 let user = try JSONDecoder().decode(User.self, from: userData)
                 return user.accessToken
-                // Now you can use the `accessToken` variable in your `getType` function or any other function that requires authentication.
             } catch {
                 print("Error decoding user data: \(error)")
             }
@@ -23,4 +22,5 @@ class AuthHeader {
         }
         return ""
     }
+    
 }

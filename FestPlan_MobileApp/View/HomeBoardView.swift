@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeBoardView: View {
     @State var shouldLogout = false
+    @State var festival = 0
     
     var body: some View {
         NavigationView {
@@ -31,8 +32,25 @@ struct HomeBoardView: View {
                 NavigationLink(destination: SignupRegistrationView()) {
                     Text("M'inscrire")
                 }
+                Text("Festival n°\(festival)")
             }
             .navigationBarTitle("Accueil")
+            .onAppear(perform: {
+                FestivalService().createFestival(nameFestival: "test") {
+                    success, error in
+                        if !success {
+                            print("yesssss")
+                        }
+                        else {
+                            print("shiitt")
+                        }
+                }
+                FestivalService().getFestival(isOpen: true) { result in
+                    DispatchQueue.main.async {
+                        self.festival = result[0].idFestival
+                    }
+                }
+            })
         }
     }
 }

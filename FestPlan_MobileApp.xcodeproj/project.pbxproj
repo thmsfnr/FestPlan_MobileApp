@@ -22,9 +22,7 @@
 		BCB9E3D329C6021500BE35D4 /* DisplayRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9E3D229C6021500BE35D4 /* DisplayRegistrationView.swift */; };
 		BCE4091729B0F6750051DB3B /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4091629B0F6750051DB3B /* SignInViewModel.swift */; };
 		BCE4091929B0F69A0051DB3B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4091829B0F69A0051DB3B /* SignInView.swift */; };
-		BCF68A1429C071F000693801 /* ConsultActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1329C071F000693801 /* ConsultActivityView.swift */; };
 		BCF68A1929C0777800693801 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1829C0777800693801 /* ApiConfig.swift */; };
-		BCF68A1B29C0793B00693801 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1A29C0793B00693801 /* ActivityService.swift */; };
 		BCF68A1D29C082E300693801 /* AuthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1C29C082E300693801 /* AuthHeader.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,9 +43,7 @@
 		BCB9E3D229C6021500BE35D4 /* DisplayRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRegistrationView.swift; sourceTree = "<group>"; };
 		BCE4091629B0F6750051DB3B /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		BCE4091829B0F69A0051DB3B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		BCF68A1329C071F000693801 /* ConsultActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultActivityView.swift; sourceTree = "<group>"; };
 		BCF68A1829C0777800693801 /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
-		BCF68A1A29C0793B00693801 /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
 		BCF68A1C29C082E300693801 /* AuthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				BCE4091829B0F69A0051DB3B /* SignInView.swift */,
-				BCF68A1329C071F000693801 /* ConsultActivityView.swift */,
 				BCB9E3CC29C5D2AF00BE35D4 /* ContentView.swift */,
 				BCB9E3CE29C5FC6C00BE35D4 /* SignUpView.swift */,
 				BCB9E3D029C601BD00BE35D4 /* HomeBoardView.swift */,
@@ -127,7 +122,6 @@
 		BCF68A1529C0760700693801 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				BCF68A1A29C0793B00693801 /* ActivityService.swift */,
 				BCF68A1C29C082E300693801 /* AuthHeader.swift */,
 				BC6DFB0829C64C5500E28895 /* AuthService.swift */,
 				BC7D545029C9961200853497 /* FestivalService.swift */,
@@ -222,8 +216,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCF68A1B29C0793B00693801 /* ActivityService.swift in Sources */,
-				BCF68A1429C071F000693801 /* ConsultActivityView.swift in Sources */,
 				BC51112729ACF22C0074E67A /* FestPlan_MobileAppApp.swift in Sources */,
 				BCF68A1929C0777800693801 /* ApiConfig.swift in Sources */,
 				BCE4091929B0F69A0051DB3B /* SignInView.swift in Sources */,
