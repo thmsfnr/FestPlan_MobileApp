@@ -8,7 +8,17 @@
 import SwiftUI
 
 struct HomeBoardView: View {
+    
+    @ObservedObject var viewModel: FestivalViewModel
+    var intent: FestivalIntent
+    
+    init(model: FestivalViewModel) {
+        self.viewModel = model
+        self.intent = FestivalIntent(festival: model)
+    }
+    
     @State var shouldLogout = false
+    @State var festival = 0
     
     var body: some View {
         NavigationView {
@@ -31,14 +41,22 @@ struct HomeBoardView: View {
                 NavigationLink(destination: SignupRegistrationView()) {
                     Text("M'inscrire")
                 }
+                if viewModel.isOpen == true {
+                    Text("Festival n°\(viewModel.idFestival) - \(viewModel.nameFestival)")
+                } else {
+                    Text("Loading festival...")
+                }
             }
             .navigationBarTitle("Accueil")
+            .onAppear(perform: {
+                intent.loadOpen()
+            })
         }
     }
 }
 
 struct HomeBoardView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeBoardView()
+        HomeBoardView(model: FestivalViewModel())
     }
 }
