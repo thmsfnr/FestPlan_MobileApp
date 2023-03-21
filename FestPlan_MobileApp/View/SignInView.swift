@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SignInView: View {
 
-    // MARK: - Properties
-
     @ObservedObject var viewModel: SignInViewModel
     var intent: SignInIntent
     
@@ -18,8 +16,6 @@ struct SignInView: View {
         self.viewModel = model
         self.intent = SignInIntent(signIn: model)
     }
-
-    // MARK: - View
 
     var body: some View {
         NavigationStack {
@@ -31,17 +27,18 @@ struct SignInView: View {
                         VStack(alignment: .leading) {
                             Text("Email")
                             TextField("Email", text: $viewModel.email)
-                                .autocapitalization(.none)
-                                .keyboardType(.emailAddress)
-                                .disableAutocorrection(true)
-                            Text("Password")
-                            SecureField("Password", text: $viewModel.password)
+                            .autocapitalization(.none)
+                            .keyboardType(.emailAddress)
+                            .disableAutocorrection(true)
+                            
+                            Text("Mot de passe")
+                            SecureField("Mot de passe", text: $viewModel.password)
                         }
                         .textFieldStyle(.roundedBorder)
 
-                            Button("Sign In") {
-                                intent.login(email: viewModel.email, password: viewModel.password)
-                            }
+                        Button("Valider") {
+                            intent.login(email: viewModel.email, password: viewModel.password)
+                        }
                         
                         Spacer()
                     }
@@ -51,23 +48,19 @@ struct SignInView: View {
                     Spacer()
                 }
                 .background(
-                                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true),
-                                               isActive: $viewModel.isSignIn) {
-                                    EmptyView()
-                                }
-                                .hidden()
-                            )
+                    NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true),isActive: $viewModel.isSignIn) {
+                        EmptyView()
+                    }
+                    .hidden()
+                )
                     
-                NavigationLink(destination: SignUpView()) {
-                    Text("No account")
+                NavigationLink(destination: SignUpView(model: SignUpViewModel())) {
+                    Text("Pas de compte ?")
                 }
             }
-            .navigationBarTitle("Login")
-
+            .navigationBarTitle("Connexion")
         }
-        
     }
-
 }
 
 struct SignInView_Previews: PreviewProvider {

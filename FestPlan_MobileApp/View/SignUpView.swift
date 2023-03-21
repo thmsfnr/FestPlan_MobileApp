@@ -8,6 +8,15 @@
 import SwiftUI
 
 struct SignUpView: View {
+
+    @ObservedObject var viewModel: SignUpViewModel
+    var intent: SignUpIntent
+    
+    init(model: SignUpViewModel) {
+        self.viewModel = model
+        self.intent = SignUpIntent(signUp: model)
+    }
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -18,17 +27,30 @@ struct SignUpView: View {
                         VStack(alignment: .leading) {
                             Text("Email")
                             TextField("Email", text: $viewModel.email)
-                                .autocapitalization(.none)
-                                .keyboardType(.emailAddress)
-                                .disableAutocorrection(true)
-                            Text("Password")
-                            SecureField("Password", text: $viewModel.password)
+                            .autocapitalization(.none)
+                            .keyboardType(.emailAddress)
+                            .disableAutocorrection(true)
+                            
+                            Text("Mot de passe")
+                            SecureField("Mot de passe", text: $viewModel.password)
+                            
+                            Text("Nom")
+                            TextField("Nom", text: $viewModel.name)
+                            .autocapitalization(.none)
+                            .keyboardType(.emailAddress)
+                            .disableAutocorrection(true)
+                            
+                            Text("Prénom")
+                            TextField("Prénom", text: $viewModel.surname)
+                            .autocapitalization(.none)
+                            .keyboardType(.emailAddress)
+                            .disableAutocorrection(true)
                         }
                         .textFieldStyle(.roundedBorder)
 
-                            Button("Sign In") {
-                                intent.login(email: viewModel.email, password: viewModel.password)
-                            }
+                        Button("Valider") {
+                            intent.signup(email: viewModel.email, password: viewModel.password, name: viewModel.name, surname: viewModel.surname)
+                        }
                         
                         Spacer()
                     }
@@ -38,19 +60,13 @@ struct SignUpView: View {
                     Spacer()
                 }
                 .background(
-                                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true),
-                                               isActive: $viewModel.isSignIn) {
-                                    EmptyView()
-                                }
-                                .hidden()
-                            )
-                    
-                NavigationLink(destination: SignUpView(model: SignUpViewModel())) {
-                    Text("No account")
-                }
+                    NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true),isActive: $viewModel.isCreated) {
+                        EmptyView()
+                    }
+                    .hidden()
+                )
             }
-            .navigationBarTitle("Login")
-
+            .navigationBarTitle("Inscription")
         }
     }
 }

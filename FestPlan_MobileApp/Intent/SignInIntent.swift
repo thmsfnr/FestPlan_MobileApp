@@ -20,13 +20,11 @@ struct SignInIntent {
         } else {
             AuthService().login(email: email, password: password) { success, error in
                 if !success {
-                    print("noo")
                     DispatchQueue.main.async {
                         self.model.state = .error
                     }
                     return
                 }
-                print("yess")
                 DispatchQueue.main.async {
                     self.model.state = .login(email,password)
                 }

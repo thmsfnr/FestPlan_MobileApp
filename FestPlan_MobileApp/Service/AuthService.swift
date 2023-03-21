@@ -91,19 +91,14 @@ class AuthService {
                 completion(false, error)
                 return
             }
-            guard let data = data else {
+            guard let httpResponse = response as? HTTPURLResponse else {
                 completion(false, nil)
                 return
             }
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                if let _ = json?["token"] as? String {
-                    completion(true, nil)
-                } else {
-                    completion(false, nil)
-                }
-            } catch {
-                completion(false, error)
+            if httpResponse.statusCode == 200 {
+                completion(true, nil)
+            } else {
+                completion(false, nil)
             }
         }.resume()
     }
