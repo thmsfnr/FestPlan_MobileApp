@@ -9,13 +9,18 @@ import Foundation
 
 class AuthHeader {
     
-    func authHeader() -> [String: String] {
-        let userDefaults = UserDefaults.standard
-        let token = UserDefaults.standard.string(forKey: "accessToken")
-        if let accessToken = token {
-            return ["x-access-token": accessToken]
+    func authHeader() -> String {
+        if let userData = UserDefaults.standard.data(forKey: "user") {
+            do {
+                let user = try JSONDecoder().decode(User.self, from: userData)
+                return user.accessToken
+                // Now you can use the `accessToken` variable in your `getType` function or any other function that requires authentication.
+            } catch {
+                print("Error decoding user data: \(error)")
+            }
+        } else {
+            print("No user data found in UserDefaults")
         }
-        return ["x-access-token": ""]
+        return ""
     }
-    
 }
