@@ -14,7 +14,7 @@ enum FestivalState {
     case error
 }
 
-class FestivalViewModel : ObservableObject {
+class FestivalModelView : ObservableObject {
     
     @Published var idFestival = 0
     @Published var nameFestival = ""

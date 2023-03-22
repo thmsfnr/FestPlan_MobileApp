@@ -9,10 +9,10 @@ import SwiftUI
 
 struct HomeBoardView: View {
     
-    @ObservedObject var viewModel: FestivalViewModel
+    @ObservedObject var viewModel: FestivalModelView
     var intent: FestivalIntent
     
-    init(model: FestivalViewModel) {
+    init(model: FestivalModelView) {
         self.viewModel = model
         self.intent = FestivalIntent(festival: model)
     }
@@ -57,6 +57,6 @@ struct HomeBoardView: View {
 
 struct HomeBoardView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeBoardView(model: FestivalViewModel())
+        HomeBoardView(model: FestivalModelView())
     }
 }
