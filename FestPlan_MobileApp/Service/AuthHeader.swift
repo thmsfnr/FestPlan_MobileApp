@@ -12,7 +12,7 @@ class AuthHeader {
     static func authHeader() -> String {
         if let userData = UserDefaults.standard.data(forKey: "user") {
             do {
-                let user = try JSONDecoder().decode(User.self, from: userData)
+                let user = try JSONDecoder().decode(Auth.self, from: userData)
                 return user.accessToken
             } catch {
                 print("Error decoding user data: \(error)")
