@@ -137,14 +137,14 @@
 		BC51112529ACF22C0074E67A /* FestPlan_MobileApp */ = {
 			isa = PBXGroup;
 			children = (
-				BCF68A1729C0762B00693801 /* Intent */,
-				BCF68A1629C0761400693801 /* Config */,
-				BCF68A1529C0760700693801 /* Service */,
-				BCE4091C29B0F6CA0051DB3B /* ModelView */,
-				BCE4091A29B0F6AF0051DB3B /* View */,
-				BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */,
 				BC51112A29ACF22E0074E67A /* Assets.xcassets */,
+				BCF68A1629C0761400693801 /* Config */,
+				BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */,
+				BCF68A1729C0762B00693801 /* Intent */,
+				BCE4091C29B0F6CA0051DB3B /* ModelView */,
 				BC51112C29ACF22E0074E67A /* Preview Content */,
+				BCF68A1529C0760700693801 /* Service */,
+				BCE4091A29B0F6AF0051DB3B /* View */,
 			);
 			path = FestPlan_MobileApp;
 			sourceTree = "<group>";

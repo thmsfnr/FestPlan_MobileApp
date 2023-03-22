@@ -65,8 +65,8 @@ class FestivalService {
                 do {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .iso8601
-                    let activities = try decoder.decode([Festival].self, from: data)
-                    completion(activities)
+                    let festivals = try decoder.decode([Festival].self, from: data)
+                    completion(festivals)
                 } catch {
                     print("Error decoding JSON: \(error.localizedDescription)")
                 }
@@ -82,7 +82,7 @@ class FestivalService {
         var request = URLRequest(url: url)
         
         var updatedFestival: [String: Any] = [:]
-        if let name = nameFestival { updatedFestival["name"] = name }
+        if let name = nameFestival { updatedFestival["nameFestival"] = name }
         if let year = year { updatedFestival["year"] = year }
         if let nbDays = nbDays { updatedFestival["nbDays"] = nbDays }
         if let isOpen = isOpen { updatedFestival["isOpen"] = isOpen }
