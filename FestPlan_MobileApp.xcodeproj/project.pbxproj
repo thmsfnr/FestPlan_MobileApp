@@ -51,6 +51,7 @@
 		BCCDCE0B29CB16C30080BDCA /* ZoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDCE0A29CB16C30080BDCA /* ZoneDetailView.swift */; };
 		BCCDCE0D29CB16CD0080BDCA /* ZoneCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDCE0C29CB16CD0080BDCA /* ZoneCreationView.swift */; };
 		BCCDCE0F29CB16D70080BDCA /* FestivalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDCE0E29CB16D70080BDCA /* FestivalDetailView.swift */; };
+		BCCDCE1229CB9AE90080BDCA /* TestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCDCE1129CB9AE90080BDCA /* TestService.swift */; };
 		BCE4091929B0F69A0051DB3B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4091829B0F69A0051DB3B /* SignInView.swift */; };
 		BCF68A1929C0777800693801 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1829C0777800693801 /* ApiConfig.swift */; };
 		BCF68A1D29C082E300693801 /* AuthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1C29C082E300693801 /* AuthHeader.swift */; };
@@ -102,6 +103,7 @@
 		BCCDCE0A29CB16C30080BDCA /* ZoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneDetailView.swift; sourceTree = "<group>"; };
 		BCCDCE0C29CB16CD0080BDCA /* ZoneCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneCreationView.swift; sourceTree = "<group>"; };
 		BCCDCE0E29CB16D70080BDCA /* FestivalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalDetailView.swift; sourceTree = "<group>"; };
+		BCCDCE1129CB9AE90080BDCA /* TestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestService.swift; sourceTree = "<group>"; };
 		BCE4091829B0F69A0051DB3B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BCF68A1829C0777800693801 /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		BCF68A1C29C082E300693801 /* AuthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeader.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				BCCDCDD629CB11FC0080BDCA /* UserService.swift */,
 				BCCDCDD829CB12090080BDCA /* UserSlotService.swift */,
 				BCCDCDDA29CB131A0080BDCA /* ZoneService.swift */,
+				BCCDCE1129CB9AE90080BDCA /* TestService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				BCCDCDFD29CB165C0080BDCA /* SlotDetailView.swift in Sources */,
 				BCCDCDEB29CB155C0080BDCA /* UserSlotIntent.swift in Sources */,
 				BCCDCDED29CB156E0080BDCA /* ZoneIntent.swift in Sources */,
+				BCCDCE1229CB9AE90080BDCA /* TestService.swift in Sources */,
 				BCCDCE0D29CB16CD0080BDCA /* ZoneCreationView.swift in Sources */,
 				BCCDCDDB29CB131A0080BDCA /* ZoneService.swift in Sources */,
 				BCCDCDF129CB15850080BDCA /* RoleIntent.swift in Sources */,

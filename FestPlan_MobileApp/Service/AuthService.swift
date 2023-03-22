@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct User: Codable {
+struct Auth: Codable {
     var id: Int
     var name: String
     var surname: String
@@ -49,7 +49,7 @@ class AuthService {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
                 if let token = json?["accessToken"] as? String {
-                    let user = User(id: json?["id"] as? Int ?? 0, name: json?["name"] as? String ?? "", surname: json?["surname"] as? String ?? "", email: json?["email"] as? String ?? "", accessToken: token)
+                    let user = Auth(id: json?["id"] as? Int ?? 0, name: json?["name"] as? String ?? "", surname: json?["surname"] as? String ?? "", email: json?["email"] as? String ?? "", accessToken: token)
                     let encoder = JSONEncoder()
                     if let data = try? encoder.encode(user) {
                         UserDefaults.standard.set(data, forKey: "user")
