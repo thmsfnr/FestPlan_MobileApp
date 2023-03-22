@@ -25,7 +25,7 @@ class RoleService {
     func getRole(idRole: Int? = nil, nameRole: String? = nil, completion: @escaping ([Role]) -> Void) {
 
         var parameters: [String: Any] = [:]
-        if let id = idRole{
+        if let id = idRole {
             parameters["idRole"] = id
         }
         if let name = nameRole {

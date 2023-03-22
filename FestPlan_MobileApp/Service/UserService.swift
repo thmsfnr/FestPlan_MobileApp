@@ -30,10 +30,10 @@ class UserService {
     
     let apiUrl = ApiConfig().url + "/user/"
     
-    func getUser(idUser: Int? = nil, name: String? = nil, surname: String? = nil, email: String? = nil, role: Int? = nil, completion: @escaping ([Day]) -> Void) {
+    func getUser(idUser: Int? = nil, name: String? = nil, surname: String? = nil, email: String? = nil, role: Int? = nil, completion: @escaping ([User]) -> Void) {
 
         var parameters: [String: Any] = [:]
-        if let id = idUser{
+        if let id = idUser {
             parameters["idUser"] = id
         }
         if let newName = name {
@@ -67,7 +67,7 @@ class UserService {
                 do {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .iso8601
-                    let users = try decoder.decode([Day].self, from: data)
+                    let users = try decoder.decode([User].self, from: data)
                     completion(users)
                 } catch {
                     print("Error decoding JSON: \(error.localizedDescription)")

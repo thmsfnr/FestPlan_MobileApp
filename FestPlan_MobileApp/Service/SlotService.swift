@@ -31,7 +31,7 @@ class SlotService {
     func getSlot(idSlot: Int? = nil, startHour: String? = nil, endHour: String? = nil, day: Int? = nil, zone: Int? = nil, completion: @escaping ([Slot]) -> Void) {
 
         var parameters: [String: Any] = [:]
-        if let id = idSlot{
+        if let id = idSlot {
             parameters["idSlot"] = id
         }
         if let newStartHour = startHour {

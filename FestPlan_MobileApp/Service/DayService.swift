@@ -31,7 +31,7 @@ class DayService {
     func getDay(idDay: Int? = nil, nameDay: String? = nil, startHour: String? = nil, endHour: String? = nil, completion: @escaping ([Day]) -> Void) {
 
         var parameters: [String: Any] = [:]
-        if let id = idDay{
+        if let id = idDay {
             parameters["idDay"] = id
         }
         if let name = nameDay {
