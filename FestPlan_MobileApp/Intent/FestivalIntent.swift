@@ -9,8 +9,8 @@ import SwiftUI
 
 struct FestivalIntent {
     
-    @ObservedObject private var model : FestivalViewModel
-    init(festival: FestivalViewModel){
+    @ObservedObject private var model : FestivalModelView
+    init(festival: FestivalModelView){
         self.model = festival
     }
     

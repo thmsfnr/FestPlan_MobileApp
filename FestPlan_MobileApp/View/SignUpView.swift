@@ -9,10 +9,10 @@ import SwiftUI
 
 struct SignUpView: View {
 
-    @ObservedObject var viewModel: UserViewModel
+    @ObservedObject var viewModel: UserModelView
     var intent: UserIntent
     
-    init(model: UserViewModel) {
+    init(model: UserModelView) {
         self.viewModel = model
         self.intent = UserIntent(user: model)
     }
@@ -73,6 +73,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(model: UserViewModel())
+        SignUpView(model: UserModelView())
     }
 }

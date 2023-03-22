@@ -1,8 +1,8 @@
 //
-//  UserViewModel.swift
+//  UserModelView.swift
 //  FestPlan_MobileApp
 //
-//  Created by Thomas Fournier on 21/03/2023.
+//  Created by Thomas Fournier on 22/03/2023.
 //
 
 import Combine
@@ -15,7 +15,7 @@ enum UserState {
     case error
 }
 
-class UserViewModel : ObservableObject {
+class UserModelView : ObservableObject {
     
     @Published var idUser = 0
     @Published var email = ""

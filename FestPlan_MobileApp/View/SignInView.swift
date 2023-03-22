@@ -9,10 +9,10 @@ import SwiftUI
 
 struct SignInView: View {
 
-    @ObservedObject var viewModel: UserViewModel
+    @ObservedObject var viewModel: UserModelView
     var intent: UserIntent
     
-    init(model: UserViewModel) {
+    init(model: UserModelView) {
         self.viewModel = model
         self.intent = UserIntent(user: model)
     }
@@ -54,7 +54,7 @@ struct SignInView: View {
                     .hidden()
                 )
                     
-                NavigationLink(destination: SignUpView(model: UserViewModel())) {
+                NavigationLink(destination: SignUpView(model: UserModelView())) {
                     Text("Pas de compte ?")
                 }
             }
@@ -65,6 +65,6 @@ struct SignInView: View {
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(model: UserViewModel())
+        SignInView(model: UserModelView())
     }
 }

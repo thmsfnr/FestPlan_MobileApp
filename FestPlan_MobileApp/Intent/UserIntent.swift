@@ -9,8 +9,8 @@ import SwiftUI
 
 struct UserIntent {
     
-    @ObservedObject private var model : UserViewModel
-    init(user: UserViewModel){
+    @ObservedObject private var model : UserModelView
+    init(user: UserModelView){
         self.model = user
     }
     
