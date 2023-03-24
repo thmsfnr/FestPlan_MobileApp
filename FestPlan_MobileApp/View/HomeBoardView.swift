@@ -35,7 +35,7 @@ struct HomeBoardView: View {
                         Text("Logout")
                     }
                 )
-                NavigationLink(destination: DisplayRegistrationView(festival: viewModel.idFestival)) {
+                NavigationLink(destination: DisplayRegistrationView(model: UserSlotListModelView(), festival: viewModel.idFestival)) {
                     Text("Mes inscriptions")
                 }
                 NavigationLink(destination: SignupRegistrationView()) {

@@ -11,19 +11,34 @@ struct DisplayRegistrationView: View {
     
     var festival: Int
     
-    init(festival: Int) {
+    @ObservedObject var viewModel: UserSlotListModelView
+    var intent: UserSlotListIntent
+    
+    init(model: UserSlotListModelView, festival: Int) {
         self.festival = festival
+        self.viewModel = model
+        self.intent = UserSlotListIntent(userSlotList: model)
     }
     
     var body: some View {
         VStack  {
             Text("\(festival)")
+            List {
+                ForEach(viewModel.list, id: \.self){item in
+                    VStack{
+                        Text("\(item.UserIdUser)")
+                    }
+                }
+            }
         }
+        .onAppear(perform: {
+            intent.loadUser()
+        })
     }
 }
 
 struct DisplayRegistrationView_Previews: PreviewProvider {
     static var previews: some View {
-        DisplayRegistrationView(festival: 1)
+        DisplayRegistrationView(model: UserSlotListModelView(), festival: 1)
     }
 }

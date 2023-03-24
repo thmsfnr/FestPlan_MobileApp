@@ -14,12 +14,11 @@ enum UserSlotState {
     case error
 }
 
-class UserSlotModelView : ObservableObject {
+class UserSlotModelView : ObservableObject, Equatable, Hashable {
     
     @Published var UserIdUser = 0
     @Published var SlotIdSlot = 0
     @Published var zone = 0
-    @Published var isOpen = false
     @Published var hasError = false
     
     @Published var state : UserSlotState = .ready {
@@ -29,7 +28,6 @@ class UserSlotModelView : ObservableObject {
                     self.UserIdUser = newUserSlot.UserIdUser
                     self.SlotIdSlot = newUserSlot.SlotIdSlot
                     self.zone = newUserSlot.zone
-                    self.isOpen = newUserSlot.isOpen
                     self.state = .ready
                 case .error:
                     self.state = .ready
@@ -51,6 +49,14 @@ class UserSlotModelView : ObservableObject {
             self.zone = zone
         }
         self.state = .ready
+    }
+    
+    static func == (lhs: UserSlotModelView, rhs: UserSlotModelView) -> Bool {
+        return lhs.UserIdUser == rhs.UserIdUser
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.UserIdUser)
     }
     
 }

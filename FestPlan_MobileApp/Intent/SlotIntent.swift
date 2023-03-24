@@ -13,7 +13,7 @@ struct SlotIntent {
     init(slot: SlotModelView){
         self.model = slot
     }
-    
+    /*
     func loadOpen(){
         SlotService().getSlot(idSlot: <#T##Int?#>) { result in
             DispatchQueue.main.async {
@@ -23,6 +23,6 @@ struct SlotIntent {
         DispatchQueue.main.async {
             self.model.state = .ready
         }
-    }
+    }*/
     
 }
