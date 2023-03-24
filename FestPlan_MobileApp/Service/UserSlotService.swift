@@ -63,6 +63,7 @@ class UserSlotService {
                     decoder.dateDecodingStrategy = .iso8601
                     let userSlots = try decoder.decode([UserSlot].self, from: data)
                     completion(userSlots)
+                    print(userSlots)
                 } catch {
                     print("Error decoding JSON: \(error.localizedDescription)")
                 }

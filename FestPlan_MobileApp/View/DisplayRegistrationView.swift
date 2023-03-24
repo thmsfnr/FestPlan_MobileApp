@@ -22,10 +22,13 @@ struct DisplayRegistrationView: View {
     
     var body: some View {
         VStack  {
-            Text("\(festival)")
             List {
                 ForEach(viewModel.list, id: \.self){item in
                     VStack{
+                        Text("\(item.UserIdUser)")
+                        Button("Button title") {
+                            print("Button tapped!")
+                        }
                         Text("\(item.UserIdUser)")
                     }
                 }
