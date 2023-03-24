@@ -8,15 +8,22 @@
 import SwiftUI
 
 struct DisplayRegistrationView: View {
+    
+    var festival: Int
+    
+    init(festival: Int) {
+        self.festival = festival
+    }
+    
     var body: some View {
         VStack  {
-            
+            Text("\(festival)")
         }
     }
 }
 
 struct DisplayRegistrationView_Previews: PreviewProvider {
     static var previews: some View {
-        DisplayRegistrationView()
+        DisplayRegistrationView(festival: 1)
     }
 }
