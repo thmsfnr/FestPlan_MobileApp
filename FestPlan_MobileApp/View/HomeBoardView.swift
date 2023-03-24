@@ -18,7 +18,7 @@ struct HomeBoardView: View {
     }
     
     @State var shouldLogout = false
-    @State var festival = 0
+    @State var isAdmin = false
     
     var body: some View {
         NavigationView {
@@ -46,10 +46,23 @@ struct HomeBoardView: View {
                 } else {
                     Text("Loading festival...")
                 }
+                if isAdmin == true {
+                    NavigationLink(destination: AdminBoardView()) {
+                        Text("Admin")
+                    }
+                }
             }
             .navigationBarTitle("Accueil")
             .onAppear(perform: {
                 intent.loadOpen()
+                TestService().isAdmin() { success, error in
+                    if !success {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        isAdmin = true
+                    }
+                }
             })
         }
     }

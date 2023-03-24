@@ -14,6 +14,8 @@ struct Slot: Codable, Equatable, Hashable {
     let endHour: String
     let day: Int
     let zone: Int
+    let Zone: Zone
+    let Day: Day
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(idSlot)
@@ -21,6 +23,9 @@ struct Slot: Codable, Equatable, Hashable {
         hasher.combine(endHour)
         hasher.combine(day)
         hasher.combine(zone)
+        hasher.combine(Zone)
+        hasher.combine(Day)
+        
     }
 }
 
@@ -66,6 +71,7 @@ class SlotService {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .iso8601
                     let slots = try decoder.decode([Slot].self, from: data)
+                    print(slots)
                     completion(slots)
                 } catch {
                     print("Error decoding JSON: \(error.localizedDescription)")

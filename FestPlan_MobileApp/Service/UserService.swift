@@ -15,6 +15,7 @@ struct User: Codable, Equatable, Hashable {
     let email: String
     let password: String
     let role: Int
+    let Role: Role
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(idUser)
@@ -23,6 +24,7 @@ struct User: Codable, Equatable, Hashable {
         hasher.combine(email)
         hasher.combine(password)
         hasher.combine(role)
+        hasher.combine(Role)
     }
 }
 

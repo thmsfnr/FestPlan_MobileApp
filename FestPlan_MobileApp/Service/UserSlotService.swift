@@ -12,11 +12,17 @@ struct UserSlot: Codable, Equatable, Hashable {
     let UserIdUser: Int
     let SlotIdSlot: Int
     let zone: Int
+    let User: User
+    let Slot: Slot
+    let Zone: Zone
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(UserIdUser)
         hasher.combine(SlotIdSlot)
         hasher.combine(zone)
+        hasher.combine(User)
+        hasher.combine(Slot)
+        hasher.combine(Zone)
     }
 }
 

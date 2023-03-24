@@ -13,12 +13,14 @@ struct Zone: Codable, Equatable, Hashable {
     let nameZone: String
     let maxVolunteers: Int
     let festival: Int
+    let Festival: Festival
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(idZone)
         hasher.combine(nameZone)
         hasher.combine(maxVolunteers)
         hasher.combine(festival)
+        hasher.combine(Festival)
     }
 }
 

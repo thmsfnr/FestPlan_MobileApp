@@ -14,6 +14,7 @@ struct Day: Codable, Equatable, Hashable {
     let startHour: String
     let endHour: String
     let festival: Int
+    let Festival: Festival
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(idDay)
@@ -21,6 +22,7 @@ struct Day: Codable, Equatable, Hashable {
         hasher.combine(startHour)
         hasher.combine(endHour)
         hasher.combine(festival)
+        hasher.combine(Festival)
     }
 }
 
