@@ -8,10 +8,22 @@
 import SwiftUI
 
 struct SignupRegistrationView: View {
+    
+    /*@ObservedObject var viewModel: ZoneModelView
+    var intent: ZoneIntent
+    
+    init(model: FestivalModelView) {
+        self.viewModel = model
+        self.intent = FestivalIntent(festival: model)
+    }*/
+    
     var body: some View {
         VStack  {
             
         }
+        .onAppear(perform: {
+            
+        })
     }
 }
 
