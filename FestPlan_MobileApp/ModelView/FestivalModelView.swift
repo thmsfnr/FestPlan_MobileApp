@@ -11,6 +11,7 @@ import Foundation
 enum FestivalState {
     case ready
     case loadOpen(Festival)
+    case closeOpen
     case error
 }
 
@@ -32,6 +33,9 @@ class FestivalModelView : ObservableObject {
                     self.year = newFestival.year
                     self.nbDays = newFestival.nbDays
                     self.isOpen = newFestival.isOpen
+                    self.state = .ready
+                case .closeOpen:
+                    self.isOpen = false
                     self.state = .ready
                 case .error:
                     self.state = .ready
