@@ -30,7 +30,7 @@ class DayService {
     
     let apiUrl = ApiConfig().url + "/day/"
     
-    func getDay(idDay: Int? = nil, nameDay: String? = nil, startHour: String? = nil, endHour: String? = nil, completion: @escaping ([Day]) -> Void) {
+    func getDay(idDay: Int? = nil, nameDay: String? = nil, startHour: String? = nil, endHour: String? = nil, festival: Int? = nil, completion: @escaping ([Day]) -> Void) {
 
         var parameters: [String: Any] = [:]
         if let id = idDay {
@@ -44,6 +44,9 @@ class DayService {
         }
         if let newEndHour = endHour {
             parameters["endHour"] = newEndHour
+        }
+        if let newFestival = festival {
+            parameters["festival"] = newFestival
         }
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: [])

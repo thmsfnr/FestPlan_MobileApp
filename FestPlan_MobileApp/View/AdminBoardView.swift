@@ -31,7 +31,7 @@ struct AdminBoardView: View {
                 NavigationLink(destination: VolunteerListView()) {
                     Text("Lister bénévoles")
                 }
-                NavigationLink(destination: DayManagementView()) {
+                NavigationLink(destination: DayManagementView(model: DayListModelView(), festival: viewModel).navigationBarBackButtonHidden(true)) {
                     Text("Gestion des jours")
                 }
                 NavigationLink(destination: ZoneManagementView()) {
@@ -42,6 +42,9 @@ struct AdminBoardView: View {
                 }
                 NavigationLink(destination: FestivalManagementView()) {
                     Text("Tous les festivals")
+                }
+                NavigationLink(destination: HomeBoardView(model: FestivalModelView()).navigationBarBackButtonHidden(true)) {
+                    Text("Retour")
                 }
             }
             .navigationBarTitle("Admin Board")
