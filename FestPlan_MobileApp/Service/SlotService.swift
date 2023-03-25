@@ -14,8 +14,8 @@ struct Slot: Codable, Equatable, Hashable {
     let endHour: String
     let day: Int
     let zone: Int
-    let Zone: Zone
-    let Day: Day
+    let Zone: Zone?
+    let Day: Day?
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(idSlot)
