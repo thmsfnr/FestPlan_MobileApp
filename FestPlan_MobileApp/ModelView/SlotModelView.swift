@@ -8,44 +8,16 @@
 import Combine
 import Foundation
 
-enum SlotState {
-    case ready
-    case loadOpen(Slot)
-    case error
-}
-
-class SlotModelView : ObservableObject {
+class SlotModelView : ObservableObject, Equatable, Hashable {
     
     @Published var idSlot = 0
     @Published var startHour = ""
     @Published var endHour = ""
     @Published var day = 0
     @Published var zone = 0
-    @Published var nameZone = ""
-    @Published var hasError = false
+    @Published var nameDay = ""
     
-    @Published var state : SlotState = .ready{
-        didSet {
-            switch state {
-                case .loadOpen(let newSlot):
-                    self.idSlot = newSlot.idSlot
-                    self.startHour = newSlot.startHour
-                    self.endHour = newSlot.endHour
-                    self.day = newSlot.day
-                    self.zone = newSlot.zone
-                    self.nameZone = nameZone
-                    self.state = .ready
-                case .error:
-                    self.state = .ready
-                    self.hasError = true
-                case .ready:
-                debugPrint("SlotViewModel: ready")
-            }
-            
-        }
-    }
-    
-    init(idSlot: Int? = nil, startHour: String? = nil, endHour: String? = nil, day: Int?, zone: Int?  ) {
+    init(idSlot: Int? = nil, startHour: String? = nil, endHour: String? = nil, day: Int? = nil, zone: Int? = nil, nameDay: String? = nil) {
         if let idSlot = idSlot {
             self.idSlot = idSlot
         }
@@ -61,8 +33,17 @@ class SlotModelView : ObservableObject {
         if let zone = zone {
             self.zone = zone
         }
-        self.state = .ready
-
+        if let nameDay = nameDay {
+            self.nameDay = nameDay
+        }
+    }
+    
+    static func == (lhs: SlotModelView, rhs: SlotModelView) -> Bool {
+        return lhs.idSlot == rhs.idSlot
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.idSlot)
     }
     
 }

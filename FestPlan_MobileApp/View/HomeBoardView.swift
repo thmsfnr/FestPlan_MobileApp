@@ -40,7 +40,7 @@ struct HomeBoardView: View {
                     NavigationLink(destination: DisplayRegistrationView(model: UserSlotListModelView(), festival: viewModel.idFestival)) {
                         Text("Mes inscriptions")
                     }
-                    NavigationLink(destination: SignupRegistrationView()) {
+                    NavigationLink(destination: SignupRegistrationView(model: ZoneSlotListModelView(), festival: viewModel.idFestival)) {
                         Text("M'inscrire")
                     }
                 } else {

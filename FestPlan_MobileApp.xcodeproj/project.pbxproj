@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B717832229CDE28B00FFB9D8 /* SlotListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B717832129CDE28B00FFB9D8 /* SlotListModelView.swift */; };
 		B717832429CDE86500FFB9D8 /* UserSlotListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B717832329CDE86500FFB9D8 /* UserSlotListModelView.swift */; };
-		B717832629CDE88B00FFB9D8 /* SlotListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B717832529CDE88B00FFB9D8 /* SlotListIntent.swift */; };
 		B717832829CDE89D00FFB9D8 /* UserSlotListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B717832729CDE89D00FFB9D8 /* UserSlotListIntent.swift */; };
 		BC51112729ACF22C0074E67A /* FestPlan_MobileAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */; };
 		BC51112B29ACF22E0074E67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC51112A29ACF22E0074E67A /* Assets.xcassets */; };
@@ -59,12 +58,14 @@
 		BCE4091929B0F69A0051DB3B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4091829B0F69A0051DB3B /* SignInView.swift */; };
 		BCF68A1929C0777800693801 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1829C0777800693801 /* ApiConfig.swift */; };
 		BCF68A1D29C082E300693801 /* AuthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF68A1C29C082E300693801 /* AuthHeader.swift */; };
+		BCFAD5C229CF1746000B0F91 /* ZoneSlotListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD5C129CF1746000B0F91 /* ZoneSlotListModelView.swift */; };
+		BCFAD5C429CF1A6A000B0F91 /* ZoneSlotModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD5C329CF1A6A000B0F91 /* ZoneSlotModelView.swift */; };
+		BCFAD5C629CF1D7E000B0F91 /* ZoneSlotListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD5C529CF1D7E000B0F91 /* ZoneSlotListIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B717832129CDE28B00FFB9D8 /* SlotListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotListModelView.swift; sourceTree = "<group>"; };
 		B717832329CDE86500FFB9D8 /* UserSlotListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSlotListModelView.swift; sourceTree = "<group>"; };
-		B717832529CDE88B00FFB9D8 /* SlotListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotListIntent.swift; sourceTree = "<group>"; };
 		B717832729CDE89D00FFB9D8 /* UserSlotListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSlotListIntent.swift; sourceTree = "<group>"; };
 		BC51112329ACF22C0074E67A /* FestPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FestPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestPlan_MobileAppApp.swift; sourceTree = "<group>"; };
@@ -115,6 +116,9 @@
 		BCE4091829B0F69A0051DB3B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BCF68A1829C0777800693801 /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		BCF68A1C29C082E300693801 /* AuthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeader.swift; sourceTree = "<group>"; };
+		BCFAD5C129CF1746000B0F91 /* ZoneSlotListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneSlotListModelView.swift; sourceTree = "<group>"; };
+		BCFAD5C329CF1A6A000B0F91 /* ZoneSlotModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneSlotModelView.swift; sourceTree = "<group>"; };
+		BCFAD5C529CF1D7E000B0F91 /* ZoneSlotListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneSlotListIntent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,8 @@
 				BCCDCDE829CB15370080BDCA /* DayModelView.swift */,
 				B717832129CDE28B00FFB9D8 /* SlotListModelView.swift */,
 				B717832329CDE86500FFB9D8 /* UserSlotListModelView.swift */,
+				BCFAD5C129CF1746000B0F91 /* ZoneSlotListModelView.swift */,
+				BCFAD5C329CF1A6A000B0F91 /* ZoneSlotModelView.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -245,8 +251,8 @@
 				BCCDCDEE29CB157B0080BDCA /* SlotIntent.swift */,
 				BCCDCDF029CB15850080BDCA /* RoleIntent.swift */,
 				BCCDCDF229CB15900080BDCA /* DayIntent.swift */,
-				B717832529CDE88B00FFB9D8 /* SlotListIntent.swift */,
 				B717832729CDE89D00FFB9D8 /* UserSlotListIntent.swift */,
+				BCFAD5C529CF1D7E000B0F91 /* ZoneSlotListIntent.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -322,13 +328,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC7D545929CA4BBB00853497 /* FestivalModelView.swift in Sources */,
-				B717832629CDE88B00FFB9D8 /* SlotListIntent.swift in Sources */,
 				BCCDCE0729CB16AC0080BDCA /* FestivalManagementView.swift in Sources */,
 				BCCDCDD529CB11EC0080BDCA /* SlotService.swift in Sources */,
 				BC7D545B29CA5AE600853497 /* FestivalIntent.swift in Sources */,
 				BC51112729ACF22C0074E67A /* FestPlan_MobileAppApp.swift in Sources */,
 				BCCDCDE529CB15200080BDCA /* SlotModelView.swift in Sources */,
 				BCCDCE0329CB16930080BDCA /* DayCreationView.swift in Sources */,
+				BCFAD5C429CF1A6A000B0F91 /* ZoneSlotModelView.swift in Sources */,
 				BCCDCDDF29CB136C0080BDCA /* UserSlotModelView.swift in Sources */,
 				BCF68A1929C0777800693801 /* ApiConfig.swift in Sources */,
 				BCCDCDF329CB15900080BDCA /* DayIntent.swift in Sources */,
@@ -344,6 +350,7 @@
 				BCCDCDFD29CB165C0080BDCA /* SlotDetailView.swift in Sources */,
 				BCCDCDEB29CB155C0080BDCA /* UserSlotIntent.swift in Sources */,
 				BCCDCDED29CB156E0080BDCA /* ZoneIntent.swift in Sources */,
+				BCFAD5C629CF1D7E000B0F91 /* ZoneSlotListIntent.swift in Sources */,
 				BCCDCE1229CB9AE90080BDCA /* TestService.swift in Sources */,
 				BCCDCE0D29CB16CD0080BDCA /* ZoneCreationView.swift in Sources */,
 				BCCDCDDB29CB131A0080BDCA /* ZoneService.swift in Sources */,
@@ -360,6 +367,7 @@
 				BCCDCE0129CB16850080BDCA /* DayDetailView.swift in Sources */,
 				BCCDCDD729CB11FC0080BDCA /* UserService.swift in Sources */,
 				BCB9E3D329C6021500BE35D4 /* DisplayRegistrationView.swift in Sources */,
+				BCFAD5C229CF1746000B0F91 /* ZoneSlotListModelView.swift in Sources */,
 				BCCDCDE329CB150B0080BDCA /* ZoneModelView.swift in Sources */,
 				B717832229CDE28B00FFB9D8 /* SlotListModelView.swift in Sources */,
 				BCF68A1D29C082E300693801 /* AuthHeader.swift in Sources */,

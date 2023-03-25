@@ -71,7 +71,6 @@ class SlotService {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .iso8601
                     let slots = try decoder.decode([Slot].self, from: data)
-                    print(slots)
                     completion(slots)
                 } catch {
                     print("Error decoding JSON: \(error.localizedDescription)")
