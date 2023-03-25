@@ -61,6 +61,8 @@
 		BCFAD5C229CF1746000B0F91 /* ZoneSlotListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD5C129CF1746000B0F91 /* ZoneSlotListModelView.swift */; };
 		BCFAD5C429CF1A6A000B0F91 /* ZoneSlotModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD5C329CF1A6A000B0F91 /* ZoneSlotModelView.swift */; };
 		BCFAD5C629CF1D7E000B0F91 /* ZoneSlotListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD5C529CF1D7E000B0F91 /* ZoneSlotListIntent.swift */; };
+		BCFAD5C829CF491A000B0F91 /* DayListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD5C729CF491A000B0F91 /* DayListModelView.swift */; };
+		BCFAD5CA29CF49EC000B0F91 /* DayListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFAD5C929CF49EC000B0F91 /* DayListIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +121,8 @@
 		BCFAD5C129CF1746000B0F91 /* ZoneSlotListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneSlotListModelView.swift; sourceTree = "<group>"; };
 		BCFAD5C329CF1A6A000B0F91 /* ZoneSlotModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneSlotModelView.swift; sourceTree = "<group>"; };
 		BCFAD5C529CF1D7E000B0F91 /* ZoneSlotListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneSlotListIntent.swift; sourceTree = "<group>"; };
+		BCFAD5C729CF491A000B0F91 /* DayListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayListModelView.swift; sourceTree = "<group>"; };
+		BCFAD5C929CF49EC000B0F91 /* DayListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayListIntent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 				B717832329CDE86500FFB9D8 /* UserSlotListModelView.swift */,
 				BCFAD5C129CF1746000B0F91 /* ZoneSlotListModelView.swift */,
 				BCFAD5C329CF1A6A000B0F91 /* ZoneSlotModelView.swift */,
+				BCFAD5C729CF491A000B0F91 /* DayListModelView.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				BCCDCDF229CB15900080BDCA /* DayIntent.swift */,
 				B717832729CDE89D00FFB9D8 /* UserSlotListIntent.swift */,
 				BCFAD5C529CF1D7E000B0F91 /* ZoneSlotListIntent.swift */,
+				BCFAD5C929CF49EC000B0F91 /* DayListIntent.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				BCFAD5C429CF1A6A000B0F91 /* ZoneSlotModelView.swift in Sources */,
 				BCCDCDDF29CB136C0080BDCA /* UserSlotModelView.swift in Sources */,
 				BCF68A1929C0777800693801 /* ApiConfig.swift in Sources */,
+				BCFAD5CA29CF49EC000B0F91 /* DayListIntent.swift in Sources */,
 				BCCDCDF329CB15900080BDCA /* DayIntent.swift in Sources */,
 				BCE4091929B0F69A0051DB3B /* SignInView.swift in Sources */,
 				BCB9E3CD29C5D2AF00BE35D4 /* ContentView.swift in Sources */,
@@ -354,6 +361,7 @@
 				BCCDCE1229CB9AE90080BDCA /* TestService.swift in Sources */,
 				BCCDCE0D29CB16CD0080BDCA /* ZoneCreationView.swift in Sources */,
 				BCCDCDDB29CB131A0080BDCA /* ZoneService.swift in Sources */,
+				BCFAD5C829CF491A000B0F91 /* DayListModelView.swift in Sources */,
 				BCCDCDF129CB15850080BDCA /* RoleIntent.swift in Sources */,
 				BCCDCE0F29CB16D70080BDCA /* FestivalDetailView.swift in Sources */,
 				BCCDCDE929CB15370080BDCA /* DayModelView.swift in Sources */,

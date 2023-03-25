@@ -47,7 +47,7 @@ struct HomeBoardView: View {
                     Text("Pas de festival")
                 }
                 if isAdmin == true {
-                    NavigationLink(destination: AdminBoardView(model: viewModel)) {
+                    NavigationLink(destination: AdminBoardView(model: viewModel).navigationBarBackButtonHidden(true)) {
                         Text("Admin")
                     }
                 }
