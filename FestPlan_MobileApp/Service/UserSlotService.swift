@@ -9,12 +9,13 @@ import Foundation
 import SwiftUI
 
 struct UserSlot: Codable, Equatable, Hashable {
+    
     let UserIdUser: Int
     let SlotIdSlot: Int
     let zone: Int
-    let User: User
-    let Slot: Slot
-    let Zone: Zone
+    let User: User?
+    let Slot: Slot?
+    let Zone: Zone?
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(UserIdUser)
@@ -63,7 +64,6 @@ class UserSlotService {
                     decoder.dateDecodingStrategy = .iso8601
                     let userSlots = try decoder.decode([UserSlot].self, from: data)
                     completion(userSlots)
-                    print(userSlots)
                 } catch {
                     print("Error decoding JSON: \(error.localizedDescription)")
                 }
