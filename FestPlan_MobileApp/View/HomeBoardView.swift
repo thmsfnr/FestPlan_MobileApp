@@ -35,19 +35,19 @@ struct HomeBoardView: View {
                         Text("Logout")
                     }
                 )
-                NavigationLink(destination: DisplayRegistrationView(model: UserSlotListModelView(), festival: viewModel.idFestival)) {
-                    Text("Mes inscriptions")
-                }
-                NavigationLink(destination: SignupRegistrationView()) {
-                    Text("M'inscrire")
-                }
                 if viewModel.isOpen == true {
                     Text("Festival n°\(viewModel.idFestival) - \(viewModel.nameFestival)")
+                    NavigationLink(destination: DisplayRegistrationView(model: UserSlotListModelView(), festival: viewModel.idFestival)) {
+                        Text("Mes inscriptions")
+                    }
+                    NavigationLink(destination: SignupRegistrationView()) {
+                        Text("M'inscrire")
+                    }
                 } else {
-                    Text("Loading festival...")
+                    Text("Pas de festival")
                 }
                 if isAdmin == true {
-                    NavigationLink(destination: AdminBoardView()) {
+                    NavigationLink(destination: AdminBoardView(model: viewModel)) {
                         Text("Admin")
                     }
                 }
