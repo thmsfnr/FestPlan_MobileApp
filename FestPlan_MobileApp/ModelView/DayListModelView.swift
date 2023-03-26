@@ -10,6 +10,7 @@ import Foundation
 enum DayListState {
     case ready
     case load([Day])
+    case update(Int)
     case error
 }
 
@@ -28,6 +29,8 @@ class DayListModelView: ObservableObject {
                         save.append(newModelView)
                     }
                     list = save
+                    self.state = .ready
+                case .update(let day):
                     self.state = .ready
                 case .error:
                     self.state = .ready
