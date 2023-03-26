@@ -49,4 +49,15 @@ struct DayListIntent {
         }
     }
     
+    func create(nameDay: String, startHour: String, endHour: String, festival: Int) {
+        DayService().createDay(nameDay: nameDay, startHour: startHour, endHour: endHour, festival: festival) { success, error in
+            if !success {
+                return
+            }
+            DispatchQueue.main.async {
+                self.model.state = .ready
+            }
+        }
+    }
+    
 }

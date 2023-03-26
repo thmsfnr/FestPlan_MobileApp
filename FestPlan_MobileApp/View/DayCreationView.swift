@@ -31,11 +31,13 @@ struct DayCreationView: View {
                                 isActive: $showNewView,
                                 label: {
                                     Button("Valider") {
-                                        intent.update(idDay: content.idDay, nameDay: content.nameDay, startHour: content.startHour, endHour: content.endHour)
+                                        intent.create(nameDay: content.nameDay, startHour: content.startHour, endHour: content.endHour, festival: festival.idFestival)
+                                        sleep(1)
                                         showNewView = true
                                     }
-                                })            }
-        }
+                                }).navigationBarBackButtonHidden(true)
+            }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 
