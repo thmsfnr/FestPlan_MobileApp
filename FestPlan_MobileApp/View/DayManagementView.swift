@@ -25,12 +25,12 @@ struct DayManagementView: View {
                 NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true)) {
                     Text("Retour")
                 }
-                NavigationLink(destination: DayCreationView().navigationBarBackButtonHidden(true)) {
+                NavigationLink(destination: DayCreationView(content: DayModelView(), intent: intent, festival: festival).navigationBarBackButtonHidden(true)) {
                     Text("Ajouter jour")
                 }
                 List {
                     ForEach(viewModel.list, id: \.self){item in
-                        NavigationLink(destination: DayDetailView(content: item, intent: intent)){
+                        NavigationLink(destination: DayDetailView(content: item, intent: intent, festival: festival)){
                             VStack{
                                 Text("\(item.nameDay)")
                                 Text("\(item.startHour)")
