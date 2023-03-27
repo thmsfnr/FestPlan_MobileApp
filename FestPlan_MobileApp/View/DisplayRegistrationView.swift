@@ -9,9 +9,8 @@ import SwiftUI
 
 struct DisplayRegistrationView: View {
     
-    var festival: Int
-    
     @ObservedObject var viewModel: UserSlotListModelView
+    var festival: Int
     var intent: UserSlotListIntent
     
     init(model: UserSlotListModelView, festival: Int) {
@@ -25,13 +24,20 @@ struct DisplayRegistrationView: View {
             List {
                 ForEach(viewModel.list, id: \.self){item in
                     VStack{
-                        Text("\(item.UserIdUser)")
-                        Button("Button title") {
-                            print("Button tapped!")
-                        }
-                        Text("\(item.UserIdUser)")
+                        Text("\(item.zone)")
+                        Text("\(item.nameZone)")
+                        Text("\(item.startHour)")
+                        Text("\(item.endHour)")
+                    }
+                }.onDelete { indexSet in
+                    let ids = indexSet.enumerated().map { index, _ in
+                        (viewModel.list[index].UserIdUser, viewModel.list[index].SlotIdSlot)
+                    }
+                    ids.forEach { id in
+                        intent.remove(uId: id.0, sId: id.1)
                     }
                 }
+                
             }
         }
         .onAppear(perform: {
@@ -42,6 +48,6 @@ struct DisplayRegistrationView: View {
 
 struct DisplayRegistrationView_Previews: PreviewProvider {
     static var previews: some View {
-        DisplayRegistrationView(model: UserSlotListModelView(), festival: 1)
+        DisplayRegistrationView(model: UserSlotListModelView(), festival: FestivalModelView().idFestival)
     }
 }

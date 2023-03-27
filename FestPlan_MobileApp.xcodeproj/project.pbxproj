@@ -178,26 +178,26 @@
 		BCE4091A29B0F6AF0051DB3B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BCE4091829B0F69A0051DB3B /* SignInView.swift */,
-				BCB9E3CC29C5D2AF00BE35D4 /* ContentView.swift */,
-				BCB9E3CE29C5FC6C00BE35D4 /* SignUpView.swift */,
-				BCB9E3D029C601BD00BE35D4 /* HomeBoardView.swift */,
-				BCB9E3D229C6021500BE35D4 /* DisplayRegistrationView.swift */,
-				BC7D545229C9A7F800853497 /* SignupRegistrationView.swift */,
-				BCCDCDF429CB15FA0080BDCA /* VolunteerListView.swift */,
-				BCCDCDF629CB160D0080BDCA /* SlotCreationView.swift */,
 				BCCDCDF829CB16210080BDCA /* AdminBoardView.swift */,
-				BCCDCDFA29CB164E0080BDCA /* SlotManagementView.swift */,
-				BCCDCDFC29CB165C0080BDCA /* SlotDetailView.swift */,
-				BCCDCDFE29CB16790080BDCA /* DayManagementView.swift */,
-				BCCDCE0029CB16850080BDCA /* DayDetailView.swift */,
+				BCB9E3CC29C5D2AF00BE35D4 /* ContentView.swift */,
 				BCCDCE0229CB16930080BDCA /* DayCreationView.swift */,
+				BCCDCE0029CB16850080BDCA /* DayDetailView.swift */,
+				BCCDCDFE29CB16790080BDCA /* DayManagementView.swift */,
+				BCB9E3D229C6021500BE35D4 /* DisplayRegistrationView.swift */,
 				BCCDCE0429CB169F0080BDCA /* FestivalCreationView.swift */,
-				BCCDCE0629CB16AC0080BDCA /* FestivalManagementView.swift */,
-				BCCDCE0829CB16B80080BDCA /* ZoneManagementView.swift */,
-				BCCDCE0A29CB16C30080BDCA /* ZoneDetailView.swift */,
-				BCCDCE0C29CB16CD0080BDCA /* ZoneCreationView.swift */,
 				BCCDCE0E29CB16D70080BDCA /* FestivalDetailView.swift */,
+				BCCDCE0629CB16AC0080BDCA /* FestivalManagementView.swift */,
+				BCB9E3D029C601BD00BE35D4 /* HomeBoardView.swift */,
+				BCE4091829B0F69A0051DB3B /* SignInView.swift */,
+				BC7D545229C9A7F800853497 /* SignupRegistrationView.swift */,
+				BCB9E3CE29C5FC6C00BE35D4 /* SignUpView.swift */,
+				BCCDCDF629CB160D0080BDCA /* SlotCreationView.swift */,
+				BCCDCDFC29CB165C0080BDCA /* SlotDetailView.swift */,
+				BCCDCDFA29CB164E0080BDCA /* SlotManagementView.swift */,
+				BCCDCDF429CB15FA0080BDCA /* VolunteerListView.swift */,
+				BCCDCE0C29CB16CD0080BDCA /* ZoneCreationView.swift */,
+				BCCDCE0A29CB16C30080BDCA /* ZoneDetailView.swift */,
+				BCCDCE0829CB16B80080BDCA /* ZoneManagementView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,18 +205,18 @@
 		BCE4091C29B0F6CA0051DB3B /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
-				BC7D545829CA4BBB00853497 /* FestivalModelView.swift */,
-				BCCDCDDE29CB136C0080BDCA /* UserSlotModelView.swift */,
-				BCCDCDE029CB13A10080BDCA /* UserModelView.swift */,
-				BCCDCDE229CB150B0080BDCA /* ZoneModelView.swift */,
-				BCCDCDE429CB15200080BDCA /* SlotModelView.swift */,
-				BCCDCDE629CB152E0080BDCA /* RoleModelView.swift */,
+				BCFAD5C729CF491A000B0F91 /* DayListModelView.swift */,
 				BCCDCDE829CB15370080BDCA /* DayModelView.swift */,
+				BC7D545829CA4BBB00853497 /* FestivalModelView.swift */,
+				BCCDCDE629CB152E0080BDCA /* RoleModelView.swift */,
 				B717832129CDE28B00FFB9D8 /* SlotListModelView.swift */,
+				BCCDCDE429CB15200080BDCA /* SlotModelView.swift */,
+				BCCDCDE029CB13A10080BDCA /* UserModelView.swift */,
 				B717832329CDE86500FFB9D8 /* UserSlotListModelView.swift */,
+				BCCDCDDE29CB136C0080BDCA /* UserSlotModelView.swift */,
+				BCCDCDE229CB150B0080BDCA /* ZoneModelView.swift */,
 				BCFAD5C129CF1746000B0F91 /* ZoneSlotListModelView.swift */,
 				BCFAD5C329CF1A6A000B0F91 /* ZoneSlotModelView.swift */,
-				BCFAD5C729CF491A000B0F91 /* DayListModelView.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
