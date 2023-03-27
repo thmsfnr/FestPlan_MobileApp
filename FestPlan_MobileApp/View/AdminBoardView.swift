@@ -34,7 +34,7 @@ struct AdminBoardView: View {
                 NavigationLink(destination: DayManagementView(model: DayListModelView(), festival: viewModel).navigationBarBackButtonHidden(true)) {
                     Text("Gestion des jours")
                 }
-                NavigationLink(destination: ZoneManagementView()) {
+                NavigationLink(destination: ZoneManagementView(model: ZoneListModelView(), festival: viewModel).navigationBarBackButtonHidden(true)) {
                     Text("Gestion des zones")
                 }
                 NavigationLink(destination: SlotManagementView()) {

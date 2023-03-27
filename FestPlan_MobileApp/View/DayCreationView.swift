@@ -23,6 +23,9 @@ struct DayCreationView: View {
     var body: some View {
         NavigationView {
             VStack {
+                NavigationLink(destination: DayManagementView(model: DayListModelView(), festival: festival).navigationBarBackButtonHidden(true)) {
+                    Text("Retour")
+                }
                 TextField("Nom du jour", text: $content.nameDay)
                 TextField("Heure de départ", text: $content.startHour)
                 TextField("Heure de fin", text: $content.endHour)
