@@ -24,7 +24,11 @@ struct SignUpView: View {
                     Spacer()
                     
                     VStack {
-                        VStack(alignment: .leading) {
+                        Image("logo")
+                               .resizable()
+                               .scaledToFit()
+                        
+                        VStack(alignment: .center) {
                             Text("Email")
                             TextField("Email", text: $viewModel.email)
                             .autocapitalization(.none)
@@ -48,9 +52,17 @@ struct SignUpView: View {
                         }
                         .textFieldStyle(.roundedBorder)
 
-                        Button("Valider") {
+                        Button(action: {
                             intent.signup(email: viewModel.email, password: viewModel.password, name: viewModel.name, surname: viewModel.surname)
+                        }) {
+                            Text("Valider")
+                                .foregroundColor(.white)
+                                .padding(10)
+                                .frame(width: 138)
+                                .background(Color.black)
+                                .cornerRadius(10)
                         }
+                        .padding(.top, 20)
                         
                         Spacer()
                     }
@@ -67,6 +79,11 @@ struct SignUpView: View {
                 )
             }
             .navigationBarTitle("Inscription")
+            .navigationBarTitleDisplayMode(.inline)
+            .background(
+                Color(red: 0.9, green: 0.9, blue: 0.9)
+            )
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
