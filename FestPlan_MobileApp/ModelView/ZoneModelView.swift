@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class ZoneModelView : ObservableObject {
+class ZoneModelView : ObservableObject, Equatable, Hashable {
     
     @Published var idZone = 0
     @Published var nameZone = ""
@@ -28,6 +28,14 @@ class ZoneModelView : ObservableObject {
         if let festival = festival{
             self.festival = festival
         }
+    }
+    
+    static func == (lhs: ZoneModelView, rhs: ZoneModelView) -> Bool {
+        return lhs.idZone == rhs.idZone
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.idZone)
     }
     
 }
