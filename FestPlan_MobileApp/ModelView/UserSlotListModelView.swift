@@ -23,7 +23,8 @@ class UserSlotListModelView: ObservableObject {
             switch state {
                 case .loadUser(let newList):
                     for elem in newList {
-                        let newModelView = UserSlotModelView(UserIdUser: elem.UserIdUser, SlotIdSlot: elem.SlotIdSlot, zone: elem.zone)
+                        let newModelView = UserSlotModelView(UserIdUser: elem.UserIdUser, SlotIdSlot: elem.SlotIdSlot, zone: elem.zone, nameZone: elem.Zone?.nameZone, startHour: elem.Slot?.startHour, endHour: elem.Slot?.endHour
+                        )
                         list.append(newModelView)
                     }
                     self.state = .ready

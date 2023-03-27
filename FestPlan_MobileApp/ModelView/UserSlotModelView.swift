@@ -10,7 +10,7 @@ import Foundation
 
 enum UserSlotState {
     case ready
-    case loadOpen(UserSlot)
+    case loadUser(UserSlot)
     case error
 }
 
@@ -20,11 +20,16 @@ class UserSlotModelView : ObservableObject, Equatable, Hashable {
     @Published var SlotIdSlot = 0
     @Published var zone = 0
     @Published var hasError = false
+    @Published var nameZone = ""
+    @Published var nameDay = ""
+    @Published var startHour = ""
+    @Published var endHour = ""
+    
     
     @Published var state : UserSlotState = .ready {
         didSet {
             switch state {
-                case .loadOpen(let newUserSlot):
+                case .loadUser(let newUserSlot):
                     self.UserIdUser = newUserSlot.UserIdUser
                     self.SlotIdSlot = newUserSlot.SlotIdSlot
                     self.zone = newUserSlot.zone
@@ -38,7 +43,7 @@ class UserSlotModelView : ObservableObject, Equatable, Hashable {
         }
     }
 
-    init(UserIdUser: Int? = nil, SlotIdSlot: Int? = nil, zone: Int? = nil) {
+    init(UserIdUser: Int? = nil, SlotIdSlot: Int? = nil, zone: Int? = nil, nameZone: String? = nil, nameDay: String? = nil, startHour: String? = nil, endHour: String? = nil) {
         if let UserIdUser = UserIdUser {
             self.UserIdUser = UserIdUser
         }
@@ -47,6 +52,18 @@ class UserSlotModelView : ObservableObject, Equatable, Hashable {
         }
         if let zone = zone {
             self.zone = zone
+        }
+        if let nameZone = nameZone {
+            self.nameZone = nameZone
+        }
+        if let nameDay = nameDay {
+            self.nameDay = nameDay
+        }
+        if let startHour = startHour {
+            self.startHour = startHour
+        }
+        if let endHour = endHour {
+            self.endHour = endHour
         }
         self.state = .ready
     }

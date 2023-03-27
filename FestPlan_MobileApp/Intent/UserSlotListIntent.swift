@@ -36,5 +36,12 @@ struct UserSlotListIntent {
             print("No user data found in UserDefaults")
         }
     }
+    func remove(uId: Int, sId: Int) {
+        UserSlotService().deleteUserSlot(SlotIdSlot: sId, UserIdUser: uId) { success, error in
+            if !success {
+                return
+            }
+        }
+    }
     
 }
