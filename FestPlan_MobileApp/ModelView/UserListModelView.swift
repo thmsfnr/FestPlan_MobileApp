@@ -24,7 +24,7 @@ class UserListModelView: ObservableObject {
                 case .load(let newList):
                     var save: [UserModelView] = []
                     for elem in newList {
-                        let newModelView = UserModelView(email: elem.email, name: elem.name, surname: elem.surname)
+                        let newModelView = UserModelView(idUser: elem.idUser, email: elem.email, name: elem.name, surname: elem.surname)
                         save.append(newModelView)
                     }
                     list = save
