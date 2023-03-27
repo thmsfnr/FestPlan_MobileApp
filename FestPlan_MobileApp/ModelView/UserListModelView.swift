@@ -1,56 +1,56 @@
 //
-//  ZoneListModelView.swift
+//  UserListModelView.swift
 //  FestPlan_MobileApp
 //
-//  Created by Thomas Fournier on 27/03/2023.
+//  Created by etud on 27/03/2023.
 //
 
 import Foundation
 
-enum ZoneListState {
+enum UserListState {
     case ready
-    case load([Zone])
-    case update(Int)
+    case load([User])
     case error
 }
 
-class ZoneListModelView: ObservableObject {
+class UserListModelView: ObservableObject {
     
-    @Published public var list: [ZoneModelView] = []
+    @Published public var list: [UserModelView] = []
     @Published public var hasError = false
     
-    @Published var state : ZoneListState = .ready {
+    @Published var state : UserListState = .ready {
         didSet {
             switch state {
                 case .load(let newList):
-                    var save: [ZoneModelView] = []
+                    var save: [UserModelView] = []
                     for elem in newList {
-                        let newModelView = ZoneModelView(idZone: elem.idZone, nameZone: elem.nameZone, maxVolunteers: elem.maxVolunteers, festival: elem.festival)
+                        let newModelView = UserModelView(email: elem.email, name: elem.name, surname: elem.surname)
                         save.append(newModelView)
                     }
                     list = save
-                    self.state = .ready
-                case .update(let zone):
+                print(list[1].surname)
+                print(list[0].surname)
                     self.state = .ready
                 case .error:
                     self.state = .ready
                     self.hasError = true
                 case .ready:
-                    debugPrint("ZoneViewModel: ready")
+                    debugPrint("UserViewModel: ready")
             }
         }
     }
     
-    subscript(index: Int) -> ZoneModelView {
+    subscript(index: Int) -> UserModelView {
         get {
             return list[index]
         }
     }
     
-    init(list: [ZoneModelView]? = nil) {
+    init(list: [UserModelView]? = nil) {
         if let list = list {
             self.list = list
         }
     }
 
 }
+

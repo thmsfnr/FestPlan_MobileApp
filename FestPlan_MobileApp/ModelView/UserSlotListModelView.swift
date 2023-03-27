@@ -32,7 +32,7 @@ class UserSlotListModelView: ObservableObject {
                     self.state = .ready
                     self.hasError = true
                 case .ready:
-                    debugPrint("FestivalViewModel: ready")
+                    debugPrint("UserSlotListViewModel: ready")
             }
         }
     }

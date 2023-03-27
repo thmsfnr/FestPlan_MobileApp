@@ -15,7 +15,7 @@ enum UserState {
     case error
 }
 
-class UserModelView : ObservableObject {
+class UserModelView : ObservableObject, Equatable, Hashable {
     
     @Published var idUser = 0
     @Published var email = ""
@@ -71,6 +71,14 @@ class UserModelView : ObservableObject {
             self.role = role
         }
         self.state = .ready
+    }
+    
+    static func == (lhs: UserModelView, rhs: UserModelView) -> Bool {
+        return lhs.idUser == rhs.idUser
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.idUser)
     }
     
 }
