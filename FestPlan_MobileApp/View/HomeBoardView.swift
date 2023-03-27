@@ -23,33 +23,51 @@ struct HomeBoardView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true), isActive: $shouldLogout) {
-                    EmptyView()
-                }
-                .hidden()
-                .navigationBarItems(trailing:
-                    Button(action: {
-                        UserDefaults.standard.set(nil, forKey: "user")
-                        shouldLogout = true
-                    }) {
-                        Text("Logout")
+                HStack {
+                    Spacer()
+                    
+                    VStack {
+                        Spacer()
+                        
+                        NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true), isActive: $shouldLogout) {
+                            EmptyView()
+                        }
+                        .hidden()
+                        .navigationBarItems(leading:
+                                                Button(action: {
+                            UserDefaults.standard.set(nil, forKey: "user")
+                            shouldLogout = true
+                        }) {
+                            Image(systemName: "person.crop.circle.fill.badge.xmark")
+                                .foregroundColor(.red)
+                                .font(.system(size: 30))
+                        }
+                        )
+                        if viewModel.isOpen == true {
+                            Text(viewModel.nameFestival + " \(viewModel.year)")
+                                .foregroundColor(.black)
+                                .padding(10)
+                                .background(Color.white)
+                                .cornerRadius(10)
+
+                            NavigationLink(destination: DisplayRegistrationView(model: UserSlotListModelView(), festival: viewModel.idFestival)) {
+                                Text("Mes inscriptions")
+                            }
+                            NavigationLink(destination: SignupRegistrationView(model: ZoneSlotListModelView(), festival: viewModel.idFestival)) {
+                                Text("M'inscrire")
+                            }
+                        } else {
+                            Text("Pas de festival")
+                        }
+                        if isAdmin == true {
+                            NavigationLink(destination: AdminBoardView(model: viewModel).navigationBarBackButtonHidden(true)) {
+                                Text("Admin")
+                            }
+                        }
+                        
+                        Spacer()
                     }
-                )
-                if viewModel.isOpen == true {
-                    Text("Festival n°\(viewModel.idFestival) - \(viewModel.nameFestival)")
-                    NavigationLink(destination: DisplayRegistrationView(model: UserSlotListModelView(), festival: viewModel.idFestival)) {
-                        Text("Mes inscriptions")
-                    }
-                    NavigationLink(destination: SignupRegistrationView(model: ZoneSlotListModelView(), festival: viewModel.idFestival)) {
-                        Text("M'inscrire")
-                    }
-                } else {
-                    Text("Pas de festival")
-                }
-                if isAdmin == true {
-                    NavigationLink(destination: AdminBoardView(model: viewModel).navigationBarBackButtonHidden(true)) {
-                        Text("Admin")
-                    }
+                    Spacer()
                 }
             }
             .navigationBarTitle("Accueil")
@@ -64,6 +82,10 @@ struct HomeBoardView: View {
                     }
                 }
             })
+            .navigationBarTitleDisplayMode(.inline)
+            .background(
+                Color(red: 0.9, green: 0.9, blue: 0.9)
+            )
         }
     }
 }
