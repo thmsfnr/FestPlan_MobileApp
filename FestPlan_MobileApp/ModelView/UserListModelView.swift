@@ -17,7 +17,7 @@ class UserListModelView: ObservableObject {
     
     @Published public var list: [UserModelView] = []
     @Published public var hasError = false
-    
+     
     @Published var state : UserListState = .ready {
         didSet {
             switch state {
