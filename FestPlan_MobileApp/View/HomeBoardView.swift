@@ -49,20 +49,45 @@ struct HomeBoardView: View {
                                 .padding(10)
                                 .background(Color.white)
                                 .cornerRadius(10)
+                            
+                            Spacer()
 
                             NavigationLink(destination: DisplayRegistrationView(model: UserSlotListModelView(), festival: viewModel.idFestival)) {
                                 Text("Mes inscriptions")
+                                    .foregroundColor(.white)
+                                    .padding(10)
+                                    .frame(width: 200)
+                                    .background(Color.black)
+                                    .cornerRadius(10)
                             }
                             NavigationLink(destination: SignupRegistrationView(model: ZoneSlotListModelView(), festival: viewModel.idFestival)) {
                                 Text("M'inscrire")
+                                    .foregroundColor(.white)
+                                    .padding(10)
+                                    .frame(width: 200)
+                                    .background(Color.black)
+                                    .cornerRadius(10)
                             }
+                            .padding(.top, 20)
                         } else {
                             Text("Pas de festival")
+                                .foregroundColor(.black)
+                                .padding(10)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                            
+                            Spacer()
                         }
                         if isAdmin == true {
                             NavigationLink(destination: AdminBoardView(model: viewModel).navigationBarBackButtonHidden(true)) {
                                 Text("Admin")
+                                    .foregroundColor(.white)
+                                    .padding(10)
+                                    .frame(width: 200)
+                                    .background(Color.black)
+                                    .cornerRadius(10)
                             }
+                            .padding(.top, 20)
                         }
                         
                         Spacer()
