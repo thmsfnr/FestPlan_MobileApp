@@ -17,7 +17,9 @@ struct FestivalIntent {
     func loadOpen(){
         FestivalService().getFestival(isOpen: true) { result in
             DispatchQueue.main.async {
-                self.model.state = .loadOpen(result[0])
+                if result.count != 0 {
+                    self.model.state = .loadOpen(result[0])
+                }
             }
         }
         DispatchQueue.main.async {
