@@ -28,7 +28,7 @@ struct AdminBoardView: View {
                 } else {
                     Text("Pas de festival")
                 }
-                NavigationLink(destination: VolunteerListView()) {
+                NavigationLink(destination: VolunteerListView(model: UserListModelView())) {
                     Text("Lister bénévoles")
                 }
                 NavigationLink(destination: DayManagementView(model: DayListModelView(), festival: viewModel).navigationBarBackButtonHidden(true)) {
