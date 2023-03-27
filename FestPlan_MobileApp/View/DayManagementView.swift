@@ -44,7 +44,7 @@ struct DayManagementView: View {
                     }
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
         .onAppear(perform: {
             intent.load(festival: festival.idFestival)
         })

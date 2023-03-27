@@ -23,19 +23,23 @@ struct ZoneDetailView: View {
     var body: some View {
         NavigationView {
             VStack {
+                NavigationLink(destination: ZoneManagementView(model: ZoneListModelView(), festival: festival).navigationBarBackButtonHidden(true)) {
+                    Text("Retour")
+                }
                 TextField("Nom de la zone", text: $content.nameZone)
                 TextField("Nombre max de bénévoles", value: $content.maxVolunteers, formatter: NumberFormatter())
                 NavigationLink(
-                                destination: ZoneManagementView(model: ZoneListModelView(), festival: festival),
+                                destination: ZoneManagementView(model: ZoneListModelView(), festival: festival).navigationBarBackButtonHidden(true),
                                 isActive: $showNewView,
                                 label: {
                                     Button("Valider") {
                                         intent.update(idZone: content.idZone, nameZone: content.nameZone, maxVolunteers: content.maxVolunteers)
+                                        sleep(1)
                                         showNewView = true
                                     }
-                                })
+                                }).navigationBarBackButtonHidden(true)
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 
