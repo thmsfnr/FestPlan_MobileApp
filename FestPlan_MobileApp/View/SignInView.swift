@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignInView: View {
-
+    
     @ObservedObject var viewModel: UserModelView
     var intent: UserIntent
     
@@ -18,48 +18,70 @@ struct SignInView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            VStack {
-                HStack {
-                    Spacer()
-                    
-                    VStack {
-                        VStack(alignment: .leading) {
-                            Text("Email")
-                            TextField("Email", text: $viewModel.email)
-                            .autocapitalization(.none)
-                            .keyboardType(.emailAddress)
-                            .disableAutocorrection(true)
+            
+            NavigationStack {
+                VStack {
+                    HStack {
+                        Spacer()
+                        
+                        VStack {
+                            Image("logo")
+                                   .resizable()
+                                   .scaledToFit()
                             
-                            Text("Mot de passe")
-                            SecureField("Mot de passe", text: $viewModel.password)
+                            VStack(alignment: .center) {
+                                Text("Email")
+                                TextField("Email", text: $viewModel.email)
+                                    .autocapitalization(.none)
+                                    .keyboardType(.emailAddress)
+                                    .disableAutocorrection(true)
+                                
+                                Text("Mot de passe")
+                                SecureField("Mot de passe", text: $viewModel.password)
+                            }
+                            .textFieldStyle(.roundedBorder)
+                            
+                            Button(action: {
+                                intent.login(email: viewModel.email, password: viewModel.password)
+                            }) {
+                                Text("Valider")
+                                    .foregroundColor(.white)
+                                    .padding(10)
+                                    .frame(width: 138)
+                                    .background(Color.black)
+                                    .cornerRadius(10)
+                            }
+                            .padding(.top, 20)
+                            
+                            Spacer()
                         }
-                        .textFieldStyle(.roundedBorder)
-
-                        Button("Valider") {
-                            intent.login(email: viewModel.email, password: viewModel.password)
-                        }
+                        .padding()
+                        .frame(maxWidth: 400.0)
                         
                         Spacer()
                     }
-                    .padding()
-                    .frame(maxWidth: 400.0)
+                    .background(
+                        NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true),isActive: $viewModel.isSignIn) {
+                            EmptyView()
+                        }
+                            .hidden()
+                    )
                     
-                    Spacer()
-                }
-                .background(
-                    NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true),isActive: $viewModel.isSignIn) {
-                        EmptyView()
+                    NavigationLink(destination: SignUpView(model: UserModelView())) {
+                        Text("Pas de compte ?")
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .frame(width: 170)
+                            .background(Color.gray)
+                            .cornerRadius(10)
                     }
-                    .hidden()
-                )
-                    
-                NavigationLink(destination: SignUpView(model: UserModelView())) {
-                    Text("Pas de compte ?")
                 }
+                .navigationBarTitle("Connexion")
+                .navigationBarTitleDisplayMode(.inline)
+                .background(
+                    Color(red: 0.9, green: 0.9, blue: 0.9)
+                )
             }
-            .navigationBarTitle("Connexion")
-        }
     }
 }
 
