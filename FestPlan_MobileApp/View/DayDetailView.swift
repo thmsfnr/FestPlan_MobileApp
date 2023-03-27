@@ -27,16 +27,16 @@ struct DayDetailView: View {
                 TextField("Heure de départ", text: $content.startHour)
                 TextField("Heure de fin", text: $content.endHour)
                 NavigationLink(
-                                destination: DayManagementView(model: DayListModelView(), festival: festival).navigationBarBackButtonHidden(true),
+                                destination: DayManagementView(model: DayListModelView(), festival: festival),
                                 isActive: $showNewView,
                                 label: {
                                     Button("Valider") {
                                         intent.update(idDay: content.idDay, nameDay: content.nameDay, startHour: content.startHour, endHour: content.endHour)
                                         showNewView = true
                                     }
-                                }).navigationBarBackButtonHidden(true)
+                                })
             }
-        }.navigationBarBackButtonHidden(true)
+        }
     }
 }
 

@@ -26,16 +26,16 @@ struct ZoneDetailView: View {
                 TextField("Nom de la zone", text: $content.nameZone)
                 TextField("Nombre max de bénévoles", value: $content.maxVolunteers, formatter: NumberFormatter())
                 NavigationLink(
-                                destination: ZoneManagementView(model: ZoneListModelView(), festival: festival).navigationBarBackButtonHidden(true),
+                                destination: ZoneManagementView(model: ZoneListModelView(), festival: festival),
                                 isActive: $showNewView,
                                 label: {
                                     Button("Valider") {
                                         intent.update(idZone: content.idZone, nameZone: content.nameZone, maxVolunteers: content.maxVolunteers)
                                         showNewView = true
                                     }
-                                }).navigationBarBackButtonHidden(true)
+                                })
             }
-        }.navigationBarBackButtonHidden(true)
+        }
     }
 }
 

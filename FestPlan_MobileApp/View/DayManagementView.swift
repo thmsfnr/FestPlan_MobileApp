@@ -25,7 +25,7 @@ struct DayManagementView: View {
                 NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true)) {
                     Text("Retour")
                 }
-                NavigationLink(destination: DayCreationView(content: DayModelView(), intent: intent, festival: festival).navigationBarBackButtonHidden(true)) {
+                NavigationLink(destination: DayCreationView(content: DayModelView(), intent: intent, festival: festival)) {
                     Text("Ajouter jour")
                 }
                 List {

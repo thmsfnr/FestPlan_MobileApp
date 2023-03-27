@@ -25,7 +25,7 @@ struct ZoneManagementView: View {
                 NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true)) {
                     Text("Retour")
                 }
-                NavigationLink(destination: ZoneCreationView(content: ZoneModelView(), intent: intent, festival: festival).navigationBarBackButtonHidden(true)) {
+                NavigationLink(destination: ZoneCreationView(content: ZoneModelView(), intent: intent, festival: festival)) {
                     Text("Ajouter zone")
                 }
                 List {

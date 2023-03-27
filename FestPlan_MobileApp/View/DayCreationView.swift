@@ -27,7 +27,7 @@ struct DayCreationView: View {
                 TextField("Heure de départ", text: $content.startHour)
                 TextField("Heure de fin", text: $content.endHour)
                 NavigationLink(
-                                destination: DayManagementView(model: DayListModelView(), festival: festival).navigationBarBackButtonHidden(true),
+                                destination: DayManagementView(model: DayListModelView(), festival: festival),
                                 isActive: $showNewView,
                                 label: {
                                     Button("Valider") {
@@ -35,9 +35,9 @@ struct DayCreationView: View {
                                         sleep(1)
                                         showNewView = true
                                     }
-                                }).navigationBarBackButtonHidden(true)
+                                })
             }
-        }.navigationBarBackButtonHidden(true)
+        }
     }
 }
 
