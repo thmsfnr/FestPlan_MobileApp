@@ -31,13 +31,18 @@ struct SignInView: View {
                             
                             VStack(alignment: .center) {
                                 Text("Email")
+                                    .font(.system(size: 25))
                                 TextField("Email", text: $viewModel.email)
                                     .autocapitalization(.none)
                                     .keyboardType(.emailAddress)
                                     .disableAutocorrection(true)
+                                    .font(.system(size: 25))
                                 
                                 Text("Mot de passe")
+                                    .font(.system(size: 25))
+                                    .padding(.top, 20)
                                 SecureField("Mot de passe", text: $viewModel.password)
+                                    .font(.system(size: 25))
                             }
                             .textFieldStyle(.roundedBorder)
                             
@@ -46,12 +51,13 @@ struct SignInView: View {
                             }) {
                                 Text("Valider")
                                     .foregroundColor(.white)
-                                    .padding(10)
-                                    .frame(width: 138)
+                                    .font(.system(size: 25))
+                                    .padding(20)
+                                    .frame(width: 150)
                                     .background(Color.black)
                                     .cornerRadius(10)
                             }
-                            .padding(.top, 20)
+                            .padding(.top, 30)
                             
                             Spacer()
                         }
@@ -70,8 +76,9 @@ struct SignInView: View {
                     NavigationLink(destination: SignUpView(model: UserModelView())) {
                         Text("Pas de compte ?")
                             .foregroundColor(.white)
-                            .padding(10)
-                            .frame(width: 170)
+                            .font(.system(size: 20))
+                            .padding(15)
+                            .frame(width: 200)
                             .background(Color.gray)
                             .cornerRadius(10)
                     }
