@@ -15,7 +15,7 @@ enum FestivalState {
     case error
 }
 
-class FestivalModelView : ObservableObject {
+class FestivalModelView : ObservableObject, Equatable, Hashable {
     
     @Published var idFestival = 0
     @Published var nameFestival = ""
@@ -63,6 +63,14 @@ class FestivalModelView : ObservableObject {
             self.isOpen = isOpen
         }
         self.state = .ready
+    }
+    
+    static func == (lhs: FestivalModelView, rhs: FestivalModelView) -> Bool {
+        return lhs.idFestival == rhs.idFestival
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.idFestival)
     }
     
 }
