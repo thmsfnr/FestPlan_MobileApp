@@ -72,7 +72,7 @@ struct HomeBoardView: View {
                             }
                             .padding(.top, 20)
                         } else {
-                            Text("Pas de festival. Revenez ultérieurement.")
+                            Text("Pas de festival ouvert, revenez plus tard")
                                 .font(.system(size: 25))
                                 .foregroundColor(.black)
                                 .padding(10)
