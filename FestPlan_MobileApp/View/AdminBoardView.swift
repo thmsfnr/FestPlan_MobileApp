@@ -40,7 +40,7 @@ struct AdminBoardView: View {
                 NavigationLink(destination: SlotManagementView()) {
                     Text("Gestion des créneaux")
                 }
-                NavigationLink(destination: FestivalManagementView()) {
+                NavigationLink(destination: FestivalManagementView(model: FestivalListModelView(), festival: viewModel)) {
                     Text("Tous les festivals")
                 }
                 NavigationLink(destination: HomeBoardView(model: FestivalModelView()).navigationBarBackButtonHidden(true)) {

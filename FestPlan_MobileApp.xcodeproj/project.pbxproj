@@ -12,6 +12,8 @@
 		B717832829CDE89D00FFB9D8 /* UserSlotListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B717832729CDE89D00FFB9D8 /* UserSlotListIntent.swift */; };
 		B7480D3129D18B4400A3750B /* UserListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7480D3029D18B4400A3750B /* UserListModelView.swift */; };
 		B7480D3329D18D6A00A3750B /* UserListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7480D3229D18D6A00A3750B /* UserListIntent.swift */; };
+		B77E97F529D2C300006D13C3 /* FestivalListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E97F429D2C300006D13C3 /* FestivalListModelView.swift */; };
+		B77E97F729D2C79F006D13C3 /* FestivalListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E97F629D2C79F006D13C3 /* FestivalListIntent.swift */; };
 		BC51112729ACF22C0074E67A /* FestPlan_MobileAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */; };
 		BC51112B29ACF22E0074E67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC51112A29ACF22E0074E67A /* Assets.xcassets */; };
 		BC51112E29ACF22E0074E67A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC51112D29ACF22E0074E67A /* Preview Assets.xcassets */; };
@@ -75,6 +77,8 @@
 		B717832729CDE89D00FFB9D8 /* UserSlotListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSlotListIntent.swift; sourceTree = "<group>"; };
 		B7480D3029D18B4400A3750B /* UserListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListModelView.swift; sourceTree = "<group>"; };
 		B7480D3229D18D6A00A3750B /* UserListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListIntent.swift; sourceTree = "<group>"; };
+		B77E97F429D2C300006D13C3 /* FestivalListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalListModelView.swift; sourceTree = "<group>"; };
+		B77E97F629D2C79F006D13C3 /* FestivalListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalListIntent.swift; sourceTree = "<group>"; };
 		BC51112329ACF22C0074E67A /* FestPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FestPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestPlan_MobileAppApp.swift; sourceTree = "<group>"; };
 		BC51112A29ACF22E0074E67A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -213,20 +217,21 @@
 		BCE4091C29B0F6CA0051DB3B /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
+				BCFAD5C729CF491A000B0F91 /* DayListModelView.swift */,
 				BCCDCDE829CB15370080BDCA /* DayModelView.swift */,
 				BC7D545829CA4BBB00853497 /* FestivalModelView.swift */,
 				BCCDCDE629CB152E0080BDCA /* RoleModelView.swift */,
 				B717832129CDE28B00FFB9D8 /* SlotListModelView.swift */,
 				BCCDCDE429CB15200080BDCA /* SlotModelView.swift */,
+				B7480D3029D18B4400A3750B /* UserListModelView.swift */,
 				BCCDCDE029CB13A10080BDCA /* UserModelView.swift */,
 				B717832329CDE86500FFB9D8 /* UserSlotListModelView.swift */,
 				BCCDCDDE29CB136C0080BDCA /* UserSlotModelView.swift */,
+				BCFAD5CB29D168DB000B0F91 /* ZoneListModelView.swift */,
 				BCCDCDE229CB150B0080BDCA /* ZoneModelView.swift */,
 				BCFAD5C129CF1746000B0F91 /* ZoneSlotListModelView.swift */,
 				BCFAD5C329CF1A6A000B0F91 /* ZoneSlotModelView.swift */,
-				BCFAD5C729CF491A000B0F91 /* DayListModelView.swift */,
-				BCFAD5CB29D168DB000B0F91 /* ZoneListModelView.swift */,
-				B7480D3029D18B4400A3750B /* UserListModelView.swift */,
+				B77E97F429D2C300006D13C3 /* FestivalListModelView.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				BCFAD5C929CF49EC000B0F91 /* DayListIntent.swift */,
 				BCFAD5CD29D169B0000B0F91 /* ZoneListIntent.swift */,
 				B7480D3229D18D6A00A3750B /* UserListIntent.swift */,
+				B77E97F629D2C79F006D13C3 /* FestivalListIntent.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 				BCE4091929B0F69A0051DB3B /* SignInView.swift in Sources */,
 				BCB9E3CD29C5D2AF00BE35D4 /* ContentView.swift in Sources */,
 				BCCDCDE129CB13A10080BDCA /* UserModelView.swift in Sources */,
+				B77E97F729D2C79F006D13C3 /* FestivalListIntent.swift in Sources */,
 				BCB9E3CF29C5FC6C00BE35D4 /* SignUpView.swift in Sources */,
 				BCCDCDD329CB11DF0080BDCA /* RoleService.swift in Sources */,
 				B717832429CDE86500FFB9D8 /* UserSlotListModelView.swift in Sources */,
@@ -386,6 +393,7 @@
 				BC7D545729CA49F700853497 /* UserIntent.swift in Sources */,
 				BCB9E3D129C601BE00BE35D4 /* HomeBoardView.swift in Sources */,
 				BCCDCDF929CB16210080BDCA /* AdminBoardView.swift in Sources */,
+				B77E97F529D2C300006D13C3 /* FestivalListModelView.swift in Sources */,
 				B717832829CDE89D00FFB9D8 /* UserSlotListIntent.swift in Sources */,
 				BCCDCDD129CB11CB0080BDCA /* DayService.swift in Sources */,
 				BCCDCE0129CB16850080BDCA /* DayDetailView.swift in Sources */,

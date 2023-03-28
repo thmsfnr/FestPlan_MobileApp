@@ -8,16 +8,50 @@
 import SwiftUI
 
 struct FestivalManagementView: View {
+    
+    @ObservedObject var viewModel: FestivalListModelView
+    var festival: FestivalModelView
+    var intent: FestivalListIntent
+    
+    init(model: FestivalListModelView, festival: FestivalModelView) {
+        self.viewModel = model
+        self.intent = FestivalListIntent(festivalList: model)
+        self.festival = festival
+    }
 
     var body: some View {
-        VStack {
-            
+        NavigationView {
+            VStack {
+                NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true)) {
+                    Text("Retour")
+                }
+                NavigationLink(destination: FestivalCreationView(/*content: FestivalModelView(), intent: intent, festival: festival*/)) {
+                    Text("Ajouter Festival")
+                }
+                List {
+                    ForEach(viewModel.list, id: \.self){item in
+                        NavigationLink(destination: FestivalDetailView(/*content: item, intent: intent, festival: festival*/)){
+                            VStack{
+                                Text("\(item.nameFestival)")
+                                Text("\(item.year)")
+                            }
+                        }
+                    }
+                    .onDelete { indexSet in
+                        let id = indexSet.map { viewModel.list[$0].idFestival }
+                        intent.remove(festival: id[0])
+                    }
+                }
+            }
         }
+        .onAppear(perform: {
+            intent.load(festival: festival.idFestival)
+        })
     }
 }
 
 struct FestivalManagementView_Previews: PreviewProvider {
     static var previews: some View {
-        FestivalManagementView()
+        FestivalManagementView(model: FestivalListModelView(), festival: FestivalModelView())
     }
 }
