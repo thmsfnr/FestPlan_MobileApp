@@ -78,9 +78,9 @@ struct AdminBoardView: View {
                         .background(Color.black)
                         .cornerRadius(10)
                 }
-                NavigationLink(destination: FestivalManagementView(model: FestivalListModelView(), festival: viewModel)) {
+                NavigationLink(destination: FestivalManagementView(model: FestivalListModelView(), festival: viewModel).navigationBarBackButtonHidden(true)) {
                     Text("Gérer les festivals")
-                        .foregroundColor(.white)
+                    .foregroundColor(.white)
                         .font(.system(size: 25))
                         .padding(20)
                         .frame(width: 250)

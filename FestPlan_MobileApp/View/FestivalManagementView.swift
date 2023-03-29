@@ -10,30 +10,29 @@ import SwiftUI
 struct FestivalManagementView: View {
     
     @ObservedObject var viewModel: FestivalListModelView
-    var festival: FestivalModelView
+    var festivalPrime: FestivalModelView
     var intent: FestivalListIntent
     
     init(model: FestivalListModelView, festival: FestivalModelView) {
         self.viewModel = model
         self.intent = FestivalListIntent(festivalList: model)
-        self.festival = festival
+        self.festivalPrime = festival
     }
 
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true)) {
+                NavigationLink(destination: AdminBoardView(model: festivalPrime).navigationBarBackButtonHidden(true)) {
                     Text("Retour")
                 }
-                NavigationLink(destination: FestivalCreationView(/*content: FestivalModelView(), intent: intent, festival: festival*/)) {
+                NavigationLink(destination: FestivalCreationView(content: FestivalModelView(), intent: intent, festival: festivalPrime)) {
                     Text("Ajouter Festival")
                 }
                 List {
                     ForEach(viewModel.list, id: \.self){item in
-                        NavigationLink(destination: FestivalDetailView(/*content: item, intent: intent, festival: festival*/)){
+                        NavigationLink(destination: AdminBoardAnotherFestivalView(model: item, intentList: intent, festival: festivalPrime)){
                             VStack{
-                                Text("\(item.nameFestival)")
-                                Text("\(item.year)")
+                                Text(item.nameFestival + " \(item.year)")
                             }
                         }
                     }
@@ -45,7 +44,7 @@ struct FestivalManagementView: View {
             }
         }
         .onAppear(perform: {
-            intent.load(festival: festival.idFestival)
+            intent.load(festival: festivalPrime.idFestival)
         })
     }
 }
