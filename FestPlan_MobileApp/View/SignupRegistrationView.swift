@@ -48,10 +48,10 @@ struct SignupRegistrationView: View {
                             Spacer()
                             
                             VStack(alignment: .leading) {
+                                Text("Jour: \(item2.nameDay)")
                                 Text("Zone: \(item.nameZone)")
                                 Text("Début: \(item2.startHour)")
                                 Text("Fin:\(item2.endHour)")
-                                Text("Jour: \(item2.nameDay)")
                             }
                             
                             Spacer()

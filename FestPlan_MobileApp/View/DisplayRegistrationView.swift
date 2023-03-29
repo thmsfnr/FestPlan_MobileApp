@@ -22,12 +22,37 @@ struct DisplayRegistrationView: View {
     var body: some View {
         VStack  {
             List {
+                HStack {
+                    Spacer()
+                    
+                    Text("Mes inscriptions")
+                        .font(.system(size: 20))
+                        .bold()
+                    
+                    Spacer()
+                }
+                if viewModel.list.count == 0 {
+                    HStack {
+                        Spacer()
+                        
+                        Text("Aucune inscription")
+                            .font(.system(size: 20))
+                        
+                        Spacer()
+                    }
+                }
                 ForEach(viewModel.list, id: \.self){item in
-                    VStack{
-                        Text("\(item.nameZone)")
-                        Text("\(item.startHour)")
-                        Text("\(item.endHour)")
-                        Text("\(item.nameDay)")
+                    HStack{
+                        Spacer()
+                        
+                        VStack(alignment: .center) {
+                            Text("Jour: \(item.nameDay)")
+                            Text("Zone: \(item.nameZone)")
+                            Text("Début: \(item.startHour)")
+                            Text("Fin:\(item.endHour)")
+                        }
+                        
+                        Spacer()
                     }
                 }.onDelete { indexSet in
                     let item = indexSet.map { viewModel.list[$0] }

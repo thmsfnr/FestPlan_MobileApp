@@ -22,7 +22,6 @@ class UserSlotListModelView: ObservableObject {
         didSet {
             switch state {
                 case .loadUser(let list2, let name):
-                debugPrint(list2)
                     list.append(UserSlotModelView(UserIdUser: list2.UserIdUser, SlotIdSlot: list2.SlotIdSlot, zone: list2.zone, nameZone: list2.Zone?.nameZone, nameDay: name, startHour: list2.Slot?.startHour, endHour: list2.Slot?.endHour))
                     self.state = .ready
                 case .error:
