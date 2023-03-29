@@ -22,26 +22,70 @@ struct AdminBoardView: View {
             VStack {
                 if viewModel.isOpen == true {
                     Text("Festival n°\(viewModel.idFestival) - \(viewModel.nameFestival)")
+                        .font(.system(size: 25))
+                        .foregroundColor(.black)
+                        .padding(40)
+                        .background(Color.white)
                     Button("Fermer ce festival") {
                         intent.closeOpen()
                     }
+                    .foregroundColor(.white)
+                    .font(.system(size: 25))
+                    .padding(20)
+                    .frame(width: 250)
+                    .background(Color.black)
+                    .cornerRadius(10)
+                    NavigationLink(destination: DayManagementView(model: DayListModelView(), festival: viewModel).navigationBarBackButtonHidden(true)) {
+                        Text("Gérer les jours")
+                            .foregroundColor(.white)
+                            .font(.system(size: 25))
+                            .padding(20)
+                            .frame(width: 250)
+                            .background(Color.black)
+                            .cornerRadius(10)
+                    }
+                    NavigationLink(destination: ZoneManagementView(model: ZoneListModelView(), festival: viewModel).navigationBarBackButtonHidden(true)) {
+                        Text("Gérer les zones")
+                            .foregroundColor(.white)
+                            .font(.system(size: 25))
+                            .padding(20)
+                            .frame(width: 250)
+                            .background(Color.black)
+                            .cornerRadius(10)
+                    }
+                    NavigationLink(destination: SlotManagementView()) {
+                        Text("Gérer les créneaux")
+                            .foregroundColor(.white)
+                            .font(.system(size: 25))
+                            .padding(20)
+                            .frame(width: 250)
+                            .background(Color.black)
+                            .cornerRadius(10)
+                    }
                 } else {
                     Text("Pas de festival")
+                        .font(.system(size: 25))
+                        .foregroundColor(.black)
+                        .padding(40)
+                        .background(Color.white)
                 }
                 NavigationLink(destination: VolunteerListView(model: UserListModelView())) {
-                    Text("Lister bénévoles")
-                }
-                NavigationLink(destination: DayManagementView(model: DayListModelView(), festival: viewModel).navigationBarBackButtonHidden(true)) {
-                    Text("Gestion des jours")
-                }
-                NavigationLink(destination: ZoneManagementView(model: ZoneListModelView(), festival: viewModel).navigationBarBackButtonHidden(true)) {
-                    Text("Gestion des zones")
-                }
-                NavigationLink(destination: SlotManagementView()) {
-                    Text("Gestion des créneaux")
+                    Text("Voir les bénévoles")
+                        .foregroundColor(.white)
+                        .font(.system(size: 25))
+                        .padding(20)
+                        .frame(width: 250)
+                        .background(Color.black)
+                        .cornerRadius(10)
                 }
                 NavigationLink(destination: FestivalManagementView(model: FestivalListModelView(), festival: viewModel)) {
-                    Text("Tous les festivals")
+                    Text("Gérer les festivals")
+                        .foregroundColor(.white)
+                        .font(.system(size: 25))
+                        .padding(20)
+                        .frame(width: 250)
+                        .background(Color.black)
+                        .cornerRadius(10)
                 }
                 NavigationLink(destination: HomeBoardView(model: FestivalModelView()).navigationBarBackButtonHidden(true)) {
                     Text("Retour")
