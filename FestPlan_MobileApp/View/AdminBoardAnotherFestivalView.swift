@@ -2,7 +2,7 @@
 //  AdminBoardAnotherFestivalView.swift
 //  FestPlan_MobileApp
 //
-//  Created by etud on 29/03/2023.
+//  Created by Loris Bouchez on 29/03/2023.
 //
 
 import SwiftUI
@@ -15,8 +15,8 @@ struct AdminBoardAnotherFestivalView: View {
     var intentList: FestivalListIntent
     
     init(model: FestivalModelView,intentList: FestivalListIntent ,festival: FestivalModelView) {
-        self.viewModel = festival
-        self.festivalPrime = model
+        self.viewModel = model
+        self.festivalPrime = festival
         self.intent = FestivalIntent(festival: model)
         self.intentList = intentList
     }
@@ -30,7 +30,12 @@ struct AdminBoardAnotherFestivalView: View {
                         intent.closeOpen()
                     }
                 } else {
-                    Text("Pas de festival")
+                    Text("Festival non ouvert")
+                    if !festivalPrime.isOpen {
+                        Button("Ouvrir ce festival") {
+                            intent.open()
+                        }
+                    }
                 }
                 NavigationLink(destination: VolunteerListView(model: UserListModelView())) {
                     Text("Lister bénévoles")

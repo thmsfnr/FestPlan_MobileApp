@@ -40,4 +40,17 @@ struct FestivalIntent {
         }
     }
     
+    func open(){
+        FestivalService().updateFestival(idFestival: model.idFestival, isOpen: true) { success, error in
+            if !success {
+                return
+            }
+            else {
+                DispatchQueue.main.async {
+                    self.model.state = .open
+                }
+            }
+        }
+    }
+    
 }

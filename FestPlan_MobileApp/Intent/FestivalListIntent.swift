@@ -2,7 +2,7 @@
 //  FestivalListIntent.swift
 //  FestPlan_MobileApp
 //
-//  Created by etud on 28/03/2023.
+//  Created by Loris Bouchez on 28/03/2023.
 //
 
 import Foundation
