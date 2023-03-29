@@ -12,6 +12,7 @@ enum FestivalState {
     case ready
     case loadOpen(Festival)
     case closeOpen
+    case open
     case error
 }
 
@@ -36,6 +37,9 @@ class FestivalModelView : ObservableObject, Equatable, Hashable {
                     self.state = .ready
                 case .closeOpen:
                     self.isOpen = false
+                    self.state = .ready
+                case .open:
+                    self.isOpen = true
                     self.state = .ready
                 case .error:
                     self.state = .ready

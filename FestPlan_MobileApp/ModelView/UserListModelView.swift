@@ -2,7 +2,7 @@
 //  UserListModelView.swift
 //  FestPlan_MobileApp
 //
-//  Created by etud on 27/03/2023.
+//  Created by Loris Bouchez on 27/03/2023.
 //
 
 import Foundation
