@@ -13,6 +13,8 @@ struct AdminBoardAnotherFestivalView: View {
     @ObservedObject var festivalPrime: FestivalModelView
     var intent: FestivalIntent
     var intentList: FestivalListIntent
+    @State var isActive = false
+    @Environment(\.presentationMode) var presentationMode
     
     init(model: FestivalModelView,intentList: FestivalListIntent ,festival: FestivalModelView) {
         self.viewModel = model
@@ -24,6 +26,20 @@ struct AdminBoardAnotherFestivalView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
+                NavigationLink(destination: HomeBoardView(model: FestivalModelView()).navigationBarBackButtonHidden(true)) {
+                    Text("Accueil")
+                }
+                .hidden()
+                .navigationBarItems(leading:
+                                        Button("< Back") {
+                    isActive = true
+                    presentationMode.wrappedValue.dismiss()
+                },
+                                    trailing: NavigationLink(destination:  FestivalManagementView(model: FestivalListModelView(), festival: festivalPrime).navigationBarBackButtonHidden(true), isActive: $isActive) {
+                    EmptyView()
+                })
+                
                 if viewModel.isOpen == true {
                     Text("Festival n°\(viewModel.idFestival) - \(viewModel.nameFestival)")
                     Button("Fermer ce festival") {
@@ -49,7 +65,7 @@ struct AdminBoardAnotherFestivalView: View {
                 NavigationLink(destination: SlotManagementView(model: SlotListModelView(), festival: viewModel)) {
                     Text("Gestion des créneaux")
                 }
-                NavigationLink(destination: FestivalDetailView(content: viewModel, intent: intentList, festival: festivalPrime).navigationBarBackButtonHidden(true)) {
+                NavigationLink(destination: FestivalDetailView(content: viewModel, intent: intentList, festival: festivalPrime)) {
                     Text("Détails du festival")
                 }
             }

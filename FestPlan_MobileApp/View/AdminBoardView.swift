@@ -11,15 +11,34 @@ struct AdminBoardView: View {
     
     @ObservedObject var viewModel: FestivalModelView
     var intent: FestivalIntent
+    @State var isActive = false
+    @Environment(\.presentationMode) var presentationMode
     
     init(model: FestivalModelView) {
         self.viewModel = model
         self.intent = FestivalIntent(festival: model)
     }
     
+    
+        
     var body: some View {
         NavigationView {
             VStack {
+                Spacer()
+                
+                NavigationLink(destination: HomeBoardView(model: FestivalModelView()).navigationBarBackButtonHidden(true)) {
+                    Text("Accueil")
+                }
+                .hidden()
+                .navigationBarItems(leading:
+                                        Button("< Back") {
+                    isActive = true
+                    presentationMode.wrappedValue.dismiss()
+                },
+                                    trailing: NavigationLink(destination: HomeBoardView(model: FestivalModelView()).navigationBarBackButtonHidden(true), isActive: $isActive) {
+                    EmptyView()
+                })
+                
                 if viewModel.isOpen == true {
                     Text("Festival n°\(viewModel.idFestival) - \(viewModel.nameFestival)")
                         .font(.system(size: 25))
@@ -86,9 +105,6 @@ struct AdminBoardView: View {
                         .frame(width: 250)
                         .background(Color.black)
                         .cornerRadius(10)
-                }
-                NavigationLink(destination: HomeBoardView(model: FestivalModelView()).navigationBarBackButtonHidden(true)) {
-                    Text("Retour")
                 }
             }
             .navigationBarTitle("Admin Board")

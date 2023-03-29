@@ -30,7 +30,7 @@ struct FestivalManagementView: View {
                 }
                 List {
                     ForEach(viewModel.list, id: \.self){item in
-                        NavigationLink(destination: AdminBoardAnotherFestivalView(model: item, intentList: intent, festival: festivalPrime)){
+                        NavigationLink(destination: AdminBoardAnotherFestivalView(model: item, intentList: intent, festival: festivalPrime).navigationBarBackButtonHidden(true)){
                             VStack{
                                 Text(item.nameFestival + " \(item.year)")
                             }

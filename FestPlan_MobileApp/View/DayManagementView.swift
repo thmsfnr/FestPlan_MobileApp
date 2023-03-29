@@ -12,6 +12,8 @@ struct DayManagementView: View {
     @ObservedObject var viewModel: DayListModelView
     var festival: FestivalModelView
     var intent: DayListIntent
+    @State var isActive = false
+    @Environment(\.presentationMode) var presentationMode
     
     init(model: DayListModelView, festival: FestivalModelView) {
         self.viewModel = model
@@ -22,9 +24,19 @@ struct DayManagementView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true)) {
-                    Text("Retour")
+                
+                NavigationLink(destination: HomeBoardView(model: FestivalModelView()).navigationBarBackButtonHidden(true)) {
+                    Text("Accueil")
                 }
+                .hidden()
+                .navigationBarItems(leading:
+                                        Button("< Back") {
+                    presentationMode.wrappedValue.dismiss()
+                },
+                                    trailing: NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true), isActive: $isActive) {
+                    EmptyView()
+                })
+                
                 NavigationLink(destination: DayCreationView(content: DayModelView(), intent: intent, festival: festival)) {
                     Text("Ajouter jour")
                 }
@@ -44,7 +56,7 @@ struct DayManagementView: View {
                     }
                 }
             }
-        }.navigationBarBackButtonHidden(true)
+        }//.navigationBarBackButtonHidden(true)
         .onAppear(perform: {
             intent.load(festival: festival.idFestival)
         })
@@ -56,3 +68,35 @@ struct DayManagementView_Previews: PreviewProvider {
         DayManagementView(model: DayListModelView(), festival: FestivalModelView())
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

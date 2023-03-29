@@ -12,6 +12,8 @@ struct ZoneManagementView: View {
     @ObservedObject var viewModel: ZoneListModelView
     var festival: FestivalModelView
     var intent: ZoneListIntent
+    @State var isActive = false
+    @Environment(\.presentationMode) var presentationMode
     
     init(model: ZoneListModelView, festival: FestivalModelView) {
         self.viewModel = model
@@ -22,9 +24,19 @@ struct ZoneManagementView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true)) {
-                    Text("Retour")
+                
+                NavigationLink(destination: HomeBoardView(model: FestivalModelView()).navigationBarBackButtonHidden(true)) {
+                    Text("Accueil")
                 }
+                .hidden()
+                .navigationBarItems(leading:
+                                        Button("< Back") {
+                    presentationMode.wrappedValue.dismiss()
+                },
+                                    trailing: NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true), isActive: $isActive) {
+                    EmptyView()
+                })
+                
                 NavigationLink(destination: ZoneCreationView(content: ZoneModelView(), intent: intent, festival: festival)) {
                     Text("Ajouter zone")
                 }
