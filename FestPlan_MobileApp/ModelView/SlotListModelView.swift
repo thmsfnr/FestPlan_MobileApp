@@ -25,7 +25,12 @@ class SlotListModelView : ObservableObject{
         didSet {
             switch state {
                 case .load(let newElem):
-                let newModelView = SlotModelView(idSlot: newElem.idSlot, startHour: newElem.startHour, endHour: newElem.endHour, day: newElem.day, zone: newElem.zone, nameZone: newElem.Zone?.nameZone)
+                    for elem in slots {
+                        if elem.idSlot == newElem.idSlot {
+                            return
+                        }
+                    }
+                let newModelView = SlotModelView(idSlot: newElem.idSlot, startHour: newElem.startHour, endHour: newElem.endHour, day: newElem.day, zone: newElem.zone, nameDay: newElem.Day?.nameDay, nameZone: newElem.Zone?.nameZone)
                     slots.append(newModelView)
                     self.state = .ready
                 case .error:

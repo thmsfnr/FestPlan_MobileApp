@@ -25,7 +25,7 @@ struct SlotManagementView: View {
                 NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true)) {
                     Text("Retour")
                 }
-                NavigationLink(destination: SlotCreationView(content: SlotModelView(), intent: intent, festival: festival)) {
+                NavigationLink(destination: SlotCreationView(content: SlotModelView(), intent: intent, festival: festival, listZone: ZoneListModelView(), listDay: DayListModelView())) {
                     Text("Ajouter créneaux")
                 }
                 List {
