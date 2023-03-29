@@ -16,6 +16,7 @@ enum UserSlotState {
 
 class UserSlotModelView : ObservableObject, Equatable, Hashable {
     
+    var id: UUID
     @Published var UserIdUser = 0
     @Published var SlotIdSlot = 0
     @Published var zone = 0
@@ -44,6 +45,7 @@ class UserSlotModelView : ObservableObject, Equatable, Hashable {
     }
 
     init(UserIdUser: Int? = nil, SlotIdSlot: Int? = nil, zone: Int? = nil, nameZone: String? = nil, nameDay: String? = nil, startHour: String? = nil, endHour: String? = nil) {
+        self.id = UUID()
         if let UserIdUser = UserIdUser {
             self.UserIdUser = UserIdUser
         }
@@ -69,11 +71,11 @@ class UserSlotModelView : ObservableObject, Equatable, Hashable {
     }
     
     static func == (lhs: UserSlotModelView, rhs: UserSlotModelView) -> Bool {
-        return lhs.UserIdUser == rhs.UserIdUser
+        return lhs.id == rhs.id
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(self.UserIdUser)
+        hasher.combine(self.id)
     }
     
 }

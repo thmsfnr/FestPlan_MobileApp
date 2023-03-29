@@ -9,7 +9,7 @@ import Foundation
 
 enum UserSlotListState {
     case ready
-    case loadUser([UserSlot])
+    case loadUser(UserSlot,String)
     case error
 }
 
@@ -21,12 +21,9 @@ class UserSlotListModelView: ObservableObject {
     @Published var state : UserSlotListState = .ready {
         didSet {
             switch state {
-                case .loadUser(let newList):
-                    for elem in newList {
-                        let newModelView = UserSlotModelView(UserIdUser: elem.UserIdUser, SlotIdSlot: elem.SlotIdSlot, zone: elem.zone, nameZone: elem.Zone?.nameZone, startHour: elem.Slot?.startHour, endHour: elem.Slot?.endHour
-                        )
-                        list.append(newModelView)
-                    }
+                case .loadUser(let list2, let name):
+                debugPrint(list2)
+                    list.append(UserSlotModelView(UserIdUser: list2.UserIdUser, SlotIdSlot: list2.SlotIdSlot, zone: list2.zone, nameZone: list2.Zone?.nameZone, nameDay: name, startHour: list2.Slot?.startHour, endHour: list2.Slot?.endHour))
                     self.state = .ready
                 case .error:
                     self.state = .ready

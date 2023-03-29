@@ -23,7 +23,13 @@ struct UserSlotListIntent {
                 idUser = user.id
                 UserSlotService().getUserSlot(UserIdUser: idUser) { result in
                     DispatchQueue.main.async {
-                        self.model.state = .loadUser(result)
+                        for userSlot in result {
+                            DayService().getDay(idDay: userSlot.Slot?.day) { day in
+                                DispatchQueue.main.async {
+                                    self.model.state = .loadUser(userSlot,day[0].nameDay)
+                                }
+                            }
+                        }
                     }
                 }
                 DispatchQueue.main.async {
@@ -36,6 +42,7 @@ struct UserSlotListIntent {
             print("No user data found in UserDefaults")
         }
     }
+    
     func remove(uId: Int, sId: Int) {
         UserSlotService().deleteUserSlot(SlotIdSlot: sId, UserIdUser: uId) { success, error in
             if !success {
