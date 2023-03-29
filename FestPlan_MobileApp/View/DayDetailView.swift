@@ -13,6 +13,7 @@ struct DayDetailView: View {
     var intent: DayListIntent
     var festival: FestivalModelView
     @State private var showNewView = false
+    @State var isActive = false
     
     init(content: DayModelView, intent: DayListIntent, festival: FestivalModelView) {
         self.content = content
@@ -23,9 +24,19 @@ struct DayDetailView: View {
     var body: some View {
         NavigationView {
             VStack {
+                /*
                 NavigationLink(destination: DayManagementView(model: DayListModelView(), festival: festival).navigationBarBackButtonHidden(true)) {
                     Text("Retour")
                 }
+                .hidden()
+                .navigationBarItems(leading:
+                                        Button("Retour") {
+                    isActive = true
+                },
+                                    trailing: NavigationLink(destination: DayManagementView(model: DayListModelView(), festival: festival).navigationBarBackButtonHidden(true), isActive: $isActive) {
+                    EmptyView()
+                })
+                 */
                 TextField("Nom du jour", text: $content.nameDay)
                 TextField("Heure de départ", text: $content.startHour)
                 TextField("Heure de fin", text: $content.endHour)
@@ -40,7 +51,7 @@ struct DayDetailView: View {
                                     }
                                 }).navigationBarBackButtonHidden(true)
             }
-        }.navigationBarBackButtonHidden(true)
+        }//.navigationBarBackButtonHidden(true)
     }
 }
 

@@ -23,9 +23,11 @@ struct ZoneDetailView: View {
     var body: some View {
         NavigationView {
             VStack {
+                /*
                 NavigationLink(destination: ZoneManagementView(model: ZoneListModelView(), festival: festival).navigationBarBackButtonHidden(true)) {
                     Text("Retour")
                 }
+                 */
                 TextField("Nom de la zone", text: $content.nameZone)
                 TextField("Nombre max de bénévoles", value: $content.maxVolunteers, formatter: NumberFormatter())
                 NavigationLink(
@@ -39,7 +41,7 @@ struct ZoneDetailView: View {
                                     }
                                 }).navigationBarBackButtonHidden(true)
             }
-        }.navigationBarBackButtonHidden(true)
+        }//.navigationBarBackButtonHidden(true)
     }
 }
 

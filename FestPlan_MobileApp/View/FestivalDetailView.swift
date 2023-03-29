@@ -13,6 +13,7 @@ struct FestivalDetailView: View {
     var intent: FestivalListIntent
     var festivalPrime: FestivalModelView
     @State private var showNewView = false
+    @State var isActive = false
     
     init(content: FestivalModelView, intent: FestivalListIntent, festival: FestivalModelView) {
         self.content = content
@@ -23,9 +24,19 @@ struct FestivalDetailView: View {
     var body: some View {
         NavigationView {
             VStack {
+                /*
                 NavigationLink(destination: FestivalManagementView(model: FestivalListModelView(), festival: festivalPrime).navigationBarBackButtonHidden(true)) {
-                    Text("Retour")
+                    Text("Accueil")
                 }
+                .hidden()
+                .navigationBarItems(leading:
+                                        Button("Retour") {
+                    isActive = true
+                },
+                                    trailing: NavigationLink(destination: FestivalManagementView(model: FestivalListModelView(), festival: festivalPrime).navigationBarBackButtonHidden(true), isActive: $isActive) {
+                    EmptyView()
+                })*/
+                
                 TextField("Nom de la zone", text: $content.nameFestival)
                 TextField("Année de l'évènement", value: $content.year, formatter: NumberFormatter())
                 TextField("Nombre de jour(s) de l'évènement", value: $content.nbDays, formatter: NumberFormatter())
@@ -40,7 +51,7 @@ struct FestivalDetailView: View {
                                     }
                                 }).navigationBarBackButtonHidden(true)
             }
-        }.navigationBarBackButtonHidden(true)
+        }//.navigationBarBackButtonHidden(true)
     }
 }
 
