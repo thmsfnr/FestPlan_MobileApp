@@ -23,16 +23,48 @@ struct SignupRegistrationView: View {
     var body: some View {
         VStack  {
             List {
+                HStack {
+                    Spacer()
+                    
+                    Text("Inscription à des créneaux")
+                        .font(.system(size: 20))
+                        .bold()
+                    
+                    Spacer()
+                }
+                if viewModel.list.count == 0 {
+                    HStack {
+                        Spacer()
+                        
+                        Text("Plus de créneaux disponible")
+                            .font(.system(size: 20))
+                        
+                        Spacer()
+                    }
+                }
                 ForEach(viewModel.list, id: \.self){item in
                     ForEach(item.slots, id: \.self){item2 in
-                        VStack{
-                            Text("\(item.nameZone)")
-                            Text("\(item2.startHour)")
-                            Text("\(item2.endHour)")
-                            Text("\(item2.nameDay)")
-                            Button("Add"){
-                                intent.signup(slot:item2.idSlot, zone: item.idZone)
+                        HStack{
+                            Spacer()
+                            
+                            VStack(alignment: .leading) {
+                                Text("Zone: \(item.nameZone)")
+                                Text("Début: \(item2.startHour)")
+                                Text("Fin:\(item2.endHour)")
+                                Text("Jour: \(item2.nameDay)")
                             }
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                intent.signup(slot:item2.idSlot, zone: item.idZone)
+                            }) {
+                                Image(systemName: "plus")
+                                    .foregroundColor(Color.black)
+                                    .font(.system(size: 30))
+                            }
+                            
+                            Spacer()
                         }
                     }
                 }

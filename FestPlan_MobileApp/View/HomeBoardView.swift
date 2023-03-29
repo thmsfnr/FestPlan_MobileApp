@@ -45,32 +45,35 @@ struct HomeBoardView: View {
                         )
                         if viewModel.isOpen == true {
                             Text(viewModel.nameFestival + " \(viewModel.year)")
+                                .font(.system(size: 25))
                                 .foregroundColor(.black)
-                                .padding(10)
+                                .padding(40)
                                 .background(Color.white)
-                                .cornerRadius(10)
                             
                             Spacer()
 
                             NavigationLink(destination: DisplayRegistrationView(model: UserSlotListModelView(), festival: viewModel.idFestival)) {
                                 Text("Mes inscriptions")
+                                    .font(.system(size: 25))
                                     .foregroundColor(.white)
-                                    .padding(10)
-                                    .frame(width: 200)
+                                    .padding(20)
+                                    .frame(width: 250)
                                     .background(Color.black)
                                     .cornerRadius(10)
                             }
                             NavigationLink(destination: SignupRegistrationView(model: ZoneSlotListModelView(), festival: viewModel.idFestival)) {
                                 Text("M'inscrire")
                                     .foregroundColor(.white)
-                                    .padding(10)
-                                    .frame(width: 200)
+                                    .font(.system(size: 25))
+                                    .padding(20)
+                                    .frame(width: 250)
                                     .background(Color.black)
                                     .cornerRadius(10)
                             }
                             .padding(.top, 20)
                         } else {
-                            Text("Pas de festival")
+                            Text("Pas de festival ouvert, revenez plus tard")
+                                .font(.system(size: 25))
                                 .foregroundColor(.black)
                                 .padding(10)
                                 .background(Color.white)
@@ -80,10 +83,11 @@ struct HomeBoardView: View {
                         }
                         if isAdmin == true {
                             NavigationLink(destination: AdminBoardView(model: viewModel).navigationBarBackButtonHidden(true)) {
-                                Text("Admin")
+                                Text("Admin board")
                                     .foregroundColor(.white)
-                                    .padding(10)
-                                    .frame(width: 200)
+                                    .font(.system(size: 25))
+                                    .padding(20)
+                                    .frame(width: 250)
                                     .background(Color.black)
                                     .cornerRadius(10)
                             }

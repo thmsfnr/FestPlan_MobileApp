@@ -30,22 +30,30 @@ struct SignUpView: View {
                         
                         VStack(alignment: .center) {
                             Text("Email")
+                                .font(.system(size: 25))
                             TextField("Email", text: $viewModel.email)
+                                .font(.system(size: 25))
                             .autocapitalization(.none)
                             .keyboardType(.emailAddress)
                             .disableAutocorrection(true)
                             
                             Text("Mot de passe")
+                                .font(.system(size: 25))
                             SecureField("Mot de passe", text: $viewModel.password)
+                                .font(.system(size: 25))
                             
                             Text("Nom")
+                                .font(.system(size: 25))
                             TextField("Nom", text: $viewModel.name)
+                                .font(.system(size: 25))
                             .autocapitalization(.none)
                             .keyboardType(.emailAddress)
                             .disableAutocorrection(true)
                             
                             Text("Prénom")
+                                .font(.system(size: 25))
                             TextField("Prénom", text: $viewModel.surname)
+                                .font(.system(size: 25))
                             .autocapitalization(.none)
                             .keyboardType(.emailAddress)
                             .disableAutocorrection(true)
@@ -57,12 +65,13 @@ struct SignUpView: View {
                         }) {
                             Text("Valider")
                                 .foregroundColor(.white)
-                                .padding(10)
-                                .frame(width: 138)
+                                .font(.system(size: 25))
+                                .padding(20)
+                                .frame(width: 150)
                                 .background(Color.black)
                                 .cornerRadius(10)
                         }
-                        .padding(.top, 20)
+                        .padding(.top, 40)
                         
                         Spacer()
                     }

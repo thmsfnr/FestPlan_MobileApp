@@ -24,18 +24,14 @@ struct DisplayRegistrationView: View {
             List {
                 ForEach(viewModel.list, id: \.self){item in
                     VStack{
-                        Text("\(item.zone)")
                         Text("\(item.nameZone)")
                         Text("\(item.startHour)")
                         Text("\(item.endHour)")
+                        Text("\(item.nameDay)")
                     }
                 }.onDelete { indexSet in
-                    let ids = indexSet.enumerated().map { index, _ in
-                        (viewModel.list[index].UserIdUser, viewModel.list[index].SlotIdSlot)
-                    }
-                    ids.forEach { id in
-                        intent.remove(uId: id.0, sId: id.1)
-                    }
+                    let item = indexSet.map { viewModel.list[$0] }
+                    intent.remove(uId: item[0].UserIdUser, sId: item[0].SlotIdSlot)
                 }
                 
             }
