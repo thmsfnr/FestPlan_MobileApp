@@ -15,6 +15,7 @@
 		B7480D3329D18D6A00A3750B /* UserListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7480D3229D18D6A00A3750B /* UserListIntent.swift */; };
 		B77E97F529D2C300006D13C3 /* FestivalListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E97F429D2C300006D13C3 /* FestivalListModelView.swift */; };
 		B77E97F729D2C79F006D13C3 /* FestivalListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E97F629D2C79F006D13C3 /* FestivalListIntent.swift */; };
+		BC29837429D48751008240EE /* SlotListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29837329D48751008240EE /* SlotListIntent.swift */; };
 		BC51112729ACF22C0074E67A /* FestPlan_MobileAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */; };
 		BC51112B29ACF22E0074E67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC51112A29ACF22E0074E67A /* Assets.xcassets */; };
 		BC51112E29ACF22E0074E67A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC51112D29ACF22E0074E67A /* Preview Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		B7480D3229D18D6A00A3750B /* UserListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListIntent.swift; sourceTree = "<group>"; };
 		B77E97F429D2C300006D13C3 /* FestivalListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalListModelView.swift; sourceTree = "<group>"; };
 		B77E97F629D2C79F006D13C3 /* FestivalListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalListIntent.swift; sourceTree = "<group>"; };
+		BC29837329D48751008240EE /* SlotListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotListIntent.swift; sourceTree = "<group>"; };
 		BC51112329ACF22C0074E67A /* FestPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FestPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC51112629ACF22C0074E67A /* FestPlan_MobileAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestPlan_MobileAppApp.swift; sourceTree = "<group>"; };
 		BC51112A29ACF22E0074E67A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			children = (
 				BCFAD5C729CF491A000B0F91 /* DayListModelView.swift */,
 				BCCDCDE829CB15370080BDCA /* DayModelView.swift */,
+				B77E97F429D2C300006D13C3 /* FestivalListModelView.swift */,
 				BC7D545829CA4BBB00853497 /* FestivalModelView.swift */,
 				BCCDCDE629CB152E0080BDCA /* RoleModelView.swift */,
 				B717832129CDE28B00FFB9D8 /* SlotListModelView.swift */,
@@ -234,7 +237,6 @@
 				BCCDCDE229CB150B0080BDCA /* ZoneModelView.swift */,
 				BCFAD5C129CF1746000B0F91 /* ZoneSlotListModelView.swift */,
 				BCFAD5C329CF1A6A000B0F91 /* ZoneSlotModelView.swift */,
-				B77E97F429D2C300006D13C3 /* FestivalListModelView.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -280,6 +282,7 @@
 				BCFAD5CD29D169B0000B0F91 /* ZoneListIntent.swift */,
 				B7480D3229D18D6A00A3750B /* UserListIntent.swift */,
 				B77E97F629D2C79F006D13C3 /* FestivalListIntent.swift */,
+				BC29837329D48751008240EE /* SlotListIntent.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				BCCDCDF729CB160D0080BDCA /* SlotCreationView.swift in Sources */,
 				BCCDCE0929CB16B80080BDCA /* ZoneManagementView.swift in Sources */,
 				BCCDCDFD29CB165C0080BDCA /* SlotDetailView.swift in Sources */,
+				BC29837429D48751008240EE /* SlotListIntent.swift in Sources */,
 				BCCDCDEB29CB155C0080BDCA /* UserSlotIntent.swift in Sources */,
 				BCCDCDED29CB156E0080BDCA /* ZoneIntent.swift in Sources */,
 				BCFAD5C629CF1D7E000B0F91 /* ZoneSlotListIntent.swift in Sources */,

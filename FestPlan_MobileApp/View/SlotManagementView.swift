@@ -25,12 +25,12 @@ struct SlotManagementView: View {
                 NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true)) {
                     Text("Retour")
                 }
-                NavigationLink(destination: DayCreationView(content: DayModelView(), intent: intent, festival: festival)) {
+                NavigationLink(destination: SlotCreationView(content: SlotModelView(), intent: intent, festival: festival)) {
                     Text("Ajouter créneaux")
                 }
                 List {
-                    ForEach(viewModel.list, id: \.self){item in
-                        NavigationLink(destination: DayDetailView(content: item, intent: intent, festival: festival)){
+                    ForEach(viewModel.slots, id: \.self){item in
+                        NavigationLink(destination: SlotDetailView(content: item, intent: intent, festival: festival)){
                             VStack{
                                 Text("\(item.nameDay)")
                                 Text("\(item.startHour)")
@@ -40,8 +40,8 @@ struct SlotManagementView: View {
                         }
                     }
                     .onDelete { indexSet in
-                        let id = indexSet.map { viewModel.list[$0].idSlot }
-                        intent.remove(day: id[0])
+                        let id = indexSet.map { viewModel.slots[$0].idSlot }
+                        intent.remove(slot: id[0])
                     }
                 }
             }

@@ -46,7 +46,7 @@ struct AdminBoardAnotherFestivalView: View {
                 NavigationLink(destination: ZoneManagementView(model: ZoneListModelView(), festival: viewModel).navigationBarBackButtonHidden(true)) {
                     Text("Gestion des zones")
                 }
-                NavigationLink(destination: SlotManagementView()) {
+                NavigationLink(destination: SlotManagementView(model: SlotListModelView(), festival: viewModel)) {
                     Text("Gestion des créneaux")
                 }
                 NavigationLink(destination: FestivalDetailView(content: viewModel, intent: intentList, festival: festivalPrime).navigationBarBackButtonHidden(true)) {

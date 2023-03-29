@@ -53,7 +53,7 @@ struct AdminBoardView: View {
                             .background(Color.black)
                             .cornerRadius(10)
                     }
-                    NavigationLink(destination: SlotManagementView()) {
+                    NavigationLink(destination: SlotManagementView(model: SlotListModelView(), festival: viewModel)) {
                         Text("Gérer les créneaux")
                             .foregroundColor(.white)
                             .font(.system(size: 25))
