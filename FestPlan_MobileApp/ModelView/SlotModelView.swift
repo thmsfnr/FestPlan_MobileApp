@@ -16,8 +16,10 @@ class SlotModelView : ObservableObject, Equatable, Hashable {
     @Published var day = 0
     @Published var zone = 0
     @Published var nameDay = ""
+    @Published var nameZone = ""
     
-    init(idSlot: Int? = nil, startHour: String? = nil, endHour: String? = nil, day: Int? = nil, zone: Int? = nil, nameDay: String? = nil) {
+    
+    init(idSlot: Int? = nil, startHour: String? = nil, endHour: String? = nil, day: Int? = nil, zone: Int? = nil, nameDay: String? = nil, nameZone: String? = nil) {
         if let idSlot = idSlot {
             self.idSlot = idSlot
         }
@@ -35,6 +37,9 @@ class SlotModelView : ObservableObject, Equatable, Hashable {
         }
         if let nameDay = nameDay {
             self.nameDay = nameDay
+        }
+        if let nameZone = nameZone {
+            self.nameZone = nameZone
         }
     }
     
