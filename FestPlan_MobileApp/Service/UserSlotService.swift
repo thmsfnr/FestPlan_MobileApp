@@ -65,6 +65,7 @@ class UserSlotService {
                     let userSlots = try decoder.decode([UserSlot].self, from: data)
                     completion(userSlots)
                 } catch {
+                    completion([])
                     print("Error decoding JSON: \(error.localizedDescription)")
                 }
             }.resume()

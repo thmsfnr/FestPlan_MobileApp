@@ -10,6 +10,8 @@ import Foundation
 enum UserListState {
     case ready
     case load([User])
+    case loadSlot([User])
+    case loadFree([User])
     case error
 }
 
@@ -28,8 +30,22 @@ class UserListModelView: ObservableObject {
                         save.append(newModelView)
                     }
                     list = save
-                print(list[1].surname)
-                print(list[0].surname)
+                    self.state = .ready
+                case .loadSlot(let newList):
+                    var save: [UserModelView] = []
+                    for elem in newList {
+                        let newModelView = UserModelView(idUser: elem.idUser, email: elem.email, name: elem.name, surname: elem.surname)
+                        save.append(newModelView)
+                    }
+                    list = save
+                    self.state = .ready
+                case .loadFree(let newList):
+                    var save: [UserModelView] = []
+                    for elem in newList {
+                        let newModelView = UserModelView(idUser: elem.idUser, email: elem.email, name: elem.name, surname: elem.surname)
+                        save.append(newModelView)
+                    }
+                    list = save
                     self.state = .ready
                 case .error:
                     self.state = .ready

@@ -25,12 +25,12 @@ struct SlotManagementView: View {
                 NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true)) {
                     Text("Retour")
                 }
-                NavigationLink(destination: SlotCreationView(content: SlotModelView(), intent: intent, festival: festival)) {
+                NavigationLink(destination: SlotCreationView(content: SlotModelView(), intent: intent, festival: festival, listZone: ZoneListModelView(), listDay: DayListModelView())) {
                     Text("Ajouter créneaux")
                 }
                 List {
                     ForEach(viewModel.slots, id: \.self){item in
-                        NavigationLink(destination: SlotDetailView(content: item, intent: intent, festival: festival)){
+                        NavigationLink(destination: SlotDetailView(content: item, intent: intent, festival: festival, listUserSub: UserListModelView(), listUserFree: UserListModelView(), userSlot: UserSlotModelView())){
                             VStack{
                                 Text("\(item.nameDay)")
                                 Text("\(item.startHour)")
@@ -44,7 +44,7 @@ struct SlotManagementView: View {
                         intent.remove(slot: id[0])
                     }
                 }
-            }
+                                       }
         }.navigationBarBackButtonHidden(true)
         .onAppear(perform: {
             intent.load(festival: festival.idFestival)
