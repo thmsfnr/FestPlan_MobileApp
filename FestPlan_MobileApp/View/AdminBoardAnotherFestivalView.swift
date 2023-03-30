@@ -26,7 +26,11 @@ struct AdminBoardAnotherFestivalView: View {
     var body: some View {
         NavigationView {
             VStack {
-                   
+                Text("Festival n°\(viewModel.idFestival) - \(viewModel.nameFestival)")
+                    .font(.system(size: 25))
+                    .foregroundColor(.black)
+                    .padding(40)
+                    .background(Color.white)
                 if viewModel.isOpen == true {
                     NavigationLink(destination: HomeBoardView(model: FestivalModelView()).navigationBarBackButtonHidden(true)) {
                         Text("Accueil")
@@ -41,7 +45,6 @@ struct AdminBoardAnotherFestivalView: View {
                         EmptyView()
                     })
                     
-                    Text("Festival n°\(viewModel.idFestival) - \(viewModel.nameFestival)")
                     Button("Fermer ce festival") {
                         intent.closeOpen()
                     }
@@ -124,7 +127,7 @@ struct AdminBoardAnotherFestivalView: View {
                         .cornerRadius(10)
                 }
             }
-            .navigationBarTitle("Admin Board of "+"\(viewModel.nameFestival)")
+            .navigationBarTitle("Admin Board")
         }
     }
 }

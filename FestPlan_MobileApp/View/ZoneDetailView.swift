@@ -40,7 +40,7 @@ struct ZoneDetailView: View {
                                         showNewView = true
                                     }
                                 }).navigationBarBackButtonHidden(true)
-            }
+            }.navigationBarTitle("Zone - Détail")
         }//.navigationBarBackButtonHidden(true)
     }
 }

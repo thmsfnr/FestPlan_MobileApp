@@ -64,6 +64,7 @@ struct SlotCreationView: View {
                                 }).navigationBarBackButtonHidden(true)
             }
         }//.navigationBarBackButtonHidden(true)
+        .navigationBarTitle("Créanaux - Création")
             .onAppear(perform: {
                 dayIntent.load(festival: festival.idFestival)
                 zoneIntent.load(festival: festival.idFestival)

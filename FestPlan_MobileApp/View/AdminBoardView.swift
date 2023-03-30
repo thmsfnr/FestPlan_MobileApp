@@ -105,9 +105,9 @@ struct AdminBoardView: View {
                         .background(Color.black)
                         .cornerRadius(10)
                 }
-            }
-            .navigationBarTitle("Admin Board")
+            }.navigationBarTitle("Admin Board")
         }
+        
     }
 }
 

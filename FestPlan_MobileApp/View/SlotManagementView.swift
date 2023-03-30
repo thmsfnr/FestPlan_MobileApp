@@ -57,8 +57,8 @@ struct SlotManagementView: View {
                         let id = indexSet.map { viewModel.slots[$0].idSlot }
                         intent.remove(slot: id[0])
                     }
-                }
-                                       }
+                }.navigationBarTitle("Créanaux - Gestion")
+            }
         }.navigationBarBackButtonHidden(true)
         .onAppear(perform: {
             intent.load(festival: festival.idFestival)

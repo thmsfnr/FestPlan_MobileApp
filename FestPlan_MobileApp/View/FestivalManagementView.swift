@@ -48,6 +48,7 @@ struct FestivalManagementView: View {
             intent.load(festival: festivalPrime.idFestival)
             print(festivalPrime.idFestival)
         })
+        //.navigationBarTitle("Festival - Gestion")
     }
 }
 

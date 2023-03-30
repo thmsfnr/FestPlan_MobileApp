@@ -50,8 +50,9 @@ struct FestivalDetailView: View {
                                         showNewView = true
                                     }
                                 }).navigationBarBackButtonHidden(true)
-            }
+            }//.navigationBarTitle("Festival - Création")
         }//.navigationBarBackButtonHidden(true)
+        //.navigationBarTitle("Festival - Détail")
     }
 }
 

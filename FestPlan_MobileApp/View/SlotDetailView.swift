@@ -78,6 +78,7 @@ struct SlotDetailView: View {
                 }
             }
         }//.navigationBarBackButtonHidden(true)
+        .navigationBarTitle("Créanaux - Détail")
             .onAppear(perform: {
                 userSubIntent.loadSlot(slot: content.idSlot)
                 userFreeIntent.loadFree(slot: content.idSlot)

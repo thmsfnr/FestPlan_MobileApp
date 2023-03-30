@@ -42,6 +42,7 @@ struct ZoneCreationView: View {
                                 }).navigationBarBackButtonHidden(true)
             }
         }//.navigationBarBackButtonHidden(true)
+        .navigationBarTitle("Zone - Création")
     }
 }
 
