@@ -43,6 +43,8 @@ struct SlotDetailView: View {
                 Text("Heure de départ \(content.startHour)")
                 Text("Heure de fin \(content.endHour)")
                 Text("Nom de la zone \(content.nameZone)")
+                Text("Nb bénévoles max \(userSlot.maxVolunteers)")
+                Text("Nb bénévoles actuel \(listUserSub.list.count)")
                 
                 if listUserFree.list.count != 0 {
                     Picker(selection: $selectedUser, label: Text("Select a user")) {
