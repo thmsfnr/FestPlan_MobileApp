@@ -20,6 +20,7 @@ struct SlotCreationView: View {
     @State private var selectedDay = 0
     @State private var selectedZone = 0
     
+    
     init(content: SlotModelView, intent: SlotListIntent, festival: FestivalModelView, listZone: ZoneListModelView, listDay: DayListModelView) {
         self.content = content
         self.intent = intent
@@ -33,9 +34,11 @@ struct SlotCreationView: View {
     var body: some View {
         NavigationView {
             VStack {
+                /*
                 NavigationLink(destination: SlotManagementView(model: SlotListModelView(), festival: festival).navigationBarBackButtonHidden(true)) {
                     Text("Retour")
                 }
+                 */
                 Picker(selection: $selectedDay, label: Text("Select a day")) {
                     ForEach(listDay.list, id: \.self) { index in
                         Text(index.nameDay).tag(index.idDay)
@@ -60,7 +63,7 @@ struct SlotCreationView: View {
                                     }
                                 }).navigationBarBackButtonHidden(true)
             }
-        }.navigationBarBackButtonHidden(true)
+        }//.navigationBarBackButtonHidden(true)
             .onAppear(perform: {
                 dayIntent.load(festival: festival.idFestival)
                 zoneIntent.load(festival: festival.idFestival)

@@ -53,8 +53,9 @@ struct FestivalCreationView: View {
                             showNewView = true
                         }
                     }).navigationBarBackButtonHidden(true)
-            }
+            }.navigationBarTitle("Ayoub Board")
         }//.navigationBarBackButtonHidden(true)
+        .navigationBarTitle("Festival - Création")
     }
 }
 

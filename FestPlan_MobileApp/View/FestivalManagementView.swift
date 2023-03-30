@@ -12,6 +12,7 @@ struct FestivalManagementView: View {
     @ObservedObject var viewModel: FestivalListModelView
     var festivalPrime: FestivalModelView
     var intent: FestivalListIntent
+    @Environment(\.presentationMode) var presentationMode
     
     init(model: FestivalListModelView, festival: FestivalModelView) {
         self.viewModel = model
@@ -45,6 +46,7 @@ struct FestivalManagementView: View {
         }
         .onAppear(perform: {
             intent.load(festival: festivalPrime.idFestival)
+            print(festivalPrime.idFestival)
         })
     }
 }

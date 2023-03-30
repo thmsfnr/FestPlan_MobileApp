@@ -36,16 +36,21 @@ struct ZoneManagementView: View {
                                     trailing: NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true), isActive: $isActive) {
                     EmptyView()
                 })
-                
-                NavigationLink(destination: ZoneCreationView(content: ZoneModelView(), intent: intent, festival: festival)) {
-                    Text("Ajouter zone")
+                VStack{
+                    NavigationLink(destination: ZoneCreationView(content: ZoneModelView(), intent: intent, festival: festival)) {
+                        Image(systemName: "plus")
+                            .foregroundColor(Color.black)
+                            .font(.system(size: 20))
+                    }
                 }
+                
                 List {
                     ForEach(viewModel.list, id: \.self){item in
                         NavigationLink(destination: ZoneDetailView(content: item, intent: intent, festival: festival)){
-                            VStack{
-                                Text("\(item.nameZone)")
-                                Text("\(item.maxVolunteers)")
+                            Spacer()
+                            VStack(alignment: .leading){
+                                Text("Zone: " + "\(item.nameZone)")
+                                Text("Volontaires requis: " + "\(item.maxVolunteers)")
                             }
                         }
                     }
@@ -54,8 +59,8 @@ struct ZoneManagementView: View {
                         intent.remove(zone: id[0])
                     }
                 }
-            }
-        }
+            }.navigationBarTitle("Jour - Gestion")
+        }.navigationBarTitle("Jour - Gestio1n")
         .onAppear(perform: {
             intent.load(festival: festival.idFestival)
         })

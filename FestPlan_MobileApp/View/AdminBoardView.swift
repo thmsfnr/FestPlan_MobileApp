@@ -33,7 +33,6 @@ struct AdminBoardView: View {
                 .navigationBarItems(leading:
                                         Button("< Back") {
                     isActive = true
-                    presentationMode.wrappedValue.dismiss()
                 },
                                     trailing: NavigationLink(destination: HomeBoardView(model: FestivalModelView()).navigationBarBackButtonHidden(true), isActive: $isActive) {
                     EmptyView()
@@ -52,7 +51,7 @@ struct AdminBoardView: View {
                     .font(.system(size: 25))
                     .padding(20)
                     .frame(width: 250)
-                    .background(Color.black)
+                    .background(Color.red)
                     .cornerRadius(10)
                     NavigationLink(destination: DayManagementView(model: DayListModelView(), festival: viewModel).navigationBarBackButtonHidden(true)) {
                         Text("Gérer les jours")

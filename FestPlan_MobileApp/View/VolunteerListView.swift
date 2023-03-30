@@ -21,7 +21,8 @@ struct VolunteerListView: View {
         VStack {
             List {
                 ForEach(viewModel.list, id: \.self){item in
-                    VStack{
+                        VStack(alignment: .leading)
+                    {
                         Text("\(item.email)")
                         Text("\(item.name)")
                         Text("\(item.surname)")

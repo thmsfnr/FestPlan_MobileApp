@@ -52,6 +52,7 @@ struct DayDetailView: View {
                                 }).navigationBarBackButtonHidden(true)
             }
         }//.navigationBarBackButtonHidden(true)
+        .navigationBarTitle("Jour - Détail")
     }
 }
 

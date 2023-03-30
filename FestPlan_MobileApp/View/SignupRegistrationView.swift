@@ -51,7 +51,7 @@ struct SignupRegistrationView: View {
                                 Text("Jour: \(item2.nameDay)")
                                 Text("Zone: \(item.nameZone)")
                                 Text("Début: \(item2.startHour)")
-                                Text("Fin:\(item2.endHour)")
+                                Text("Fin: \(item2.endHour)")
                             }
                             
                             Spacer()

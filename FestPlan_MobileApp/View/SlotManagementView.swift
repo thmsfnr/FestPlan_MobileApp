@@ -12,6 +12,8 @@ struct SlotManagementView: View {
     @ObservedObject var viewModel: SlotListModelView
     var festival: FestivalModelView
     var intent: SlotListIntent
+    @State var isActive = false
+    @Environment(\.presentationMode) var presentationMode
     
     init(model: SlotListModelView, festival: FestivalModelView) {
         self.viewModel = model
@@ -22,20 +24,32 @@ struct SlotManagementView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true)) {
-                    Text("Retour")
+                
+                NavigationLink(destination: HomeBoardView(model: FestivalModelView()).navigationBarBackButtonHidden(true)) {
+                    Text("Accueil")
                 }
+                .hidden()
+                .navigationBarItems(leading:
+                                        Button("< Back") {
+                    presentationMode.wrappedValue.dismiss()
+                },
+                                    trailing: NavigationLink(destination: AdminBoardView(model: festival).navigationBarBackButtonHidden(true), isActive: $isActive) {
+                    EmptyView()
+                })
+                
                 NavigationLink(destination: SlotCreationView(content: SlotModelView(), intent: intent, festival: festival, listZone: ZoneListModelView(), listDay: DayListModelView())) {
-                    Text("Ajouter créneaux")
+                        Image(systemName: "plus")
+                            .foregroundColor(Color.black)
+                            .font(.system(size: 20))
                 }
                 List {
                     ForEach(viewModel.slots, id: \.self){item in
                         NavigationLink(destination: SlotDetailView(content: item, intent: intent, festival: festival, listUserSub: UserListModelView(), listUserFree: UserListModelView(), userSlot: UserSlotModelView())){
-                            VStack{
-                                Text("\(item.nameDay)")
-                                Text("\(item.startHour)")
-                                Text("\(item.endHour)")
-                                Text("\(item.nameZone)")
+                            VStack(alignment: .leading){
+                                Text("Jour: \(item.nameDay)")
+                                Text("Zone: \(item.nameZone)")
+                                Text("Heure début: \(item.startHour)")
+                                Text("Heure fin: \(item.endHour)")
                             }
                         }
                     }
