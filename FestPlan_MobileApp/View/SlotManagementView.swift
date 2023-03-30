@@ -30,7 +30,7 @@ struct SlotManagementView: View {
                 }
                 List {
                     ForEach(viewModel.slots, id: \.self){item in
-                        NavigationLink(destination: SlotDetailView(content: item, intent: intent, festival: festival)){
+                        NavigationLink(destination: SlotDetailView(content: item, intent: intent, festival: festival, listUserSub: UserListModelView(), listUserFree: UserListModelView(), userSlot: UserSlotModelView())){
                             VStack{
                                 Text("\(item.nameDay)")
                                 Text("\(item.startHour)")
@@ -44,7 +44,7 @@ struct SlotManagementView: View {
                         intent.remove(slot: id[0])
                     }
                 }
-            }
+                                       }
         }.navigationBarBackButtonHidden(true)
         .onAppear(perform: {
             intent.load(festival: festival.idFestival)

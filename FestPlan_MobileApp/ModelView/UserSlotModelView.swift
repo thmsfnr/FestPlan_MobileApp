@@ -11,6 +11,7 @@ import Foundation
 enum UserSlotState {
     case ready
     case loadUser(UserSlot)
+    case loadZone(UserSlot)
     case error
 }
 
@@ -25,6 +26,7 @@ class UserSlotModelView : ObservableObject, Equatable, Hashable {
     @Published var nameDay = ""
     @Published var startHour = ""
     @Published var endHour = ""
+    @Published var maxVolunteers = 0
     
     
     @Published var state : UserSlotState = .ready {
@@ -35,6 +37,12 @@ class UserSlotModelView : ObservableObject, Equatable, Hashable {
                     self.SlotIdSlot = newUserSlot.SlotIdSlot
                     self.zone = newUserSlot.zone
                     self.state = .ready
+                case .loadZone(let newUserSlot):
+                    self.UserIdUser = newUserSlot.UserIdUser
+                    self.SlotIdSlot = newUserSlot.SlotIdSlot
+                    self.zone = newUserSlot.zone
+                    self.maxVolunteers = newUserSlot.Zone!.maxVolunteers
+                    self.state = .ready
                 case .error:
                     self.state = .ready
                     self.hasError = true
@@ -44,7 +52,7 @@ class UserSlotModelView : ObservableObject, Equatable, Hashable {
         }
     }
 
-    init(UserIdUser: Int? = nil, SlotIdSlot: Int? = nil, zone: Int? = nil, nameZone: String? = nil, nameDay: String? = nil, startHour: String? = nil, endHour: String? = nil) {
+    init(UserIdUser: Int? = nil, SlotIdSlot: Int? = nil, zone: Int? = nil, nameZone: String? = nil, nameDay: String? = nil, startHour: String? = nil, endHour: String? = nil, maxVolunteers: Int? = nil) {
         self.id = UUID()
         if let UserIdUser = UserIdUser {
             self.UserIdUser = UserIdUser
@@ -66,6 +74,9 @@ class UserSlotModelView : ObservableObject, Equatable, Hashable {
         }
         if let endHour = endHour {
             self.endHour = endHour
+        }
+        if let maxVolunteers = maxVolunteers {
+            self.maxVolunteers = maxVolunteers
         }
         self.state = .ready
     }
