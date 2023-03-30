@@ -36,9 +36,11 @@ struct SlotDetailView: View {
     var body: some View {
         NavigationView {
             VStack {
+                /*
                 NavigationLink(destination: SlotManagementView(model: SlotListModelView(), festival: festival).navigationBarBackButtonHidden(true)) {
                     Text("Retour")
                 }
+                 */
                 Text("Nom du jour \(content.nameDay)")
                 Text("Heure de départ \(content.startHour)")
                 Text("Heure de fin \(content.endHour)")
@@ -75,7 +77,7 @@ struct SlotDetailView: View {
                     }
                 }
             }
-        }.navigationBarBackButtonHidden(true)
+        }//.navigationBarBackButtonHidden(true)
             .onAppear(perform: {
                 userSubIntent.loadSlot(slot: content.idSlot)
                 userFreeIntent.loadFree(slot: content.idSlot)

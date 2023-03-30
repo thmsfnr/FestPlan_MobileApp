@@ -42,19 +42,20 @@ struct DayManagementView: View {
                 }
                 List {
                     ForEach(viewModel.list, id: \.self){item in
-                        NavigationLink(destination: DayDetailView(content: item, intent: intent, festival: festival)){
-                            VStack{
-                                Text("\(item.nameDay)")
-                                Text("\(item.startHour)")
-                                Text("\(item.endHour)")
+                            NavigationLink(destination: DayDetailView(content: item, intent: intent, festival: festival)){
+                                VStack(alignment: .leading){
+                                    Text("Jour: \(item.nameDay)")
+                                    Text("Heure début: \(item.startHour)")
+                                    Text("Heure fin: \(item.endHour)")
+                                }
                             }
-                        }
+                        
                     }
                     .onDelete { indexSet in
                         let id = indexSet.map { viewModel.list[$0].idDay }
                         intent.remove(day: id[0])
                     }
-                }
+                }.navigationBarTitle("Jour - Gestion")
             }
         }//.navigationBarBackButtonHidden(true)
         .onAppear(perform: {

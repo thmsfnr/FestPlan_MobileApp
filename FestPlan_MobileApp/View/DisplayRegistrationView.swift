@@ -49,7 +49,7 @@ struct DisplayRegistrationView: View {
                             Text("Jour: \(item.nameDay)")
                             Text("Zone: \(item.nameZone)")
                             Text("Début: \(item.startHour)")
-                            Text("Fin:\(item.endHour)")
+                            Text("Fin: \(item.endHour)")
                         }
                         
                         Spacer()
