@@ -7,6 +7,6 @@
 
 class ApiConfig {
     
-    var url = "https://festplan-api2.onrender.com/api" // Add your API URL here (without trailing slash) https://festplan-api2.onrender.com/api
+    var url = "http://localhost:8080/api" // Add your API URL here (without trailing slash) https://festplan-api2.onrender.com/api
     
 }
