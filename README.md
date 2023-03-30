@@ -12,7 +12,7 @@ To be done in the following order:
 - If node is not installed run `make node`
 - Run `make dependencies` to install the dependencies
 - Set the url of the API in `config/ApiConfig.swift`
-- Be sure to use an OS above iOS 14.0 and below or equals to iOS 16.0
+- Be sure to use an OS between iOS 15.0 and 16.2
 
 ***
 
