@@ -59,8 +59,8 @@ struct ZoneManagementView: View {
                         intent.remove(zone: id[0])
                     }
                 }
-            }.navigationBarTitle("Jour - Gestion")
-        }.navigationBarTitle("Jour - Gestio1n")
+            }
+        }.navigationBarTitle("Zone - Gestion")
         .onAppear(perform: {
             intent.load(festival: festival.idFestival)
         })
